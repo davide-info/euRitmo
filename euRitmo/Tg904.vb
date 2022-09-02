@@ -95,5 +95,6 @@ Class Forn
     Private TG904_FAX_FOR As String()
     Private TG904_RAPP As String()
     Private TG904_CAPO_AREA As String()
+    Private TG904_CAPO_AREA_TEL As String()
 
 End Class
