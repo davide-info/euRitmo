@@ -175,3 +175,6 @@ Public Class Tsp
     Private TG904_CODTRASP_EMAIL3 As String()
     Private TG904_CODTRASP_DTPC As String()
 End Class
+Public Class Mit
+    ''Private TG904_SIGLA As String()
+End Class
