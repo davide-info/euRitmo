@@ -87,5 +87,6 @@ Public Class Tes
 
 End Class
 Class Forn
-
+    Private TG904_RAGSOC_For As String()
+    Private TG904_RAGSOC_E_FOR As String()
 End Class
