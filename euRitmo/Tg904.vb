@@ -154,3 +154,7 @@ Public Class Pdv
     Private TG904_CODSEDELEG_PDV As String()
     Private TG904_COD_PDV as String()
 End Class
+
+Public Class Tsp
+
+End Class
