@@ -86,7 +86,7 @@ Public Class Tes
 
 
 End Class
-Class Forn
+Public Class Forn
     Private TG904_RAGSOC_For As String()
     Private TG904_RAGSOC_E_FOR As String()
     Private TG904_BANCA_FOR As String()
@@ -126,4 +126,7 @@ Class Forn
     Private TG904_FG050_FLAG4 As String()
     Private TG904_FG050_FLAG5 As String()
     Private TG904_CODFORR As String()
+End Class
+Public Class Rub
+
 End Class
