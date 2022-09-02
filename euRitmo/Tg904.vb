@@ -121,5 +121,9 @@ Class Forn
     Private TG904_COD_PAG As String()
     Private TG904_COD_PAG_DES As String()
     Private TG904_FG050_FLAG1 As String()
-
+    Private TG904_FG050_FLAG2 As String()
+    Private TG904_FG050_FLAG3 As String()
+    Private TG904_FG050_FLAG4 As String()
+    Private TG904_FG050_FLAG5 As String()
+    Private TG904_CODFORR As String()
 End Class
