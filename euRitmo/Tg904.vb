@@ -156,5 +156,6 @@ Public Class Pdv
 End Class
 
 Public Class Tsp
-
+    Private TG904_CODTRASP As String()
+    Private TG904_CODTRASP_TE1 As String()
 End Class
