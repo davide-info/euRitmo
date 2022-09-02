@@ -89,4 +89,9 @@ End Class
 Class Forn
     Private TG904_RAGSOC_For As String()
     Private TG904_RAGSOC_E_FOR As String()
+    Private TG904_BANCA_FOR As String()
+    Private TG904_TELEFONO_FOR As String()
+    Private TG904_TELEX_FOR As String()
+    Private TG904_FAX_FOR As String()
+
 End Class
