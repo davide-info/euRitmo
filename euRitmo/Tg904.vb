@@ -158,4 +158,9 @@ End Class
 Public Class Tsp
     Private TG904_CODTRASP As String()
     Private TG904_CODTRASP_TE1 As String()
+    Private TG904_CODTRASP_TE2 As String()
+    Private TG904_CODTRASP_TE3 As String()
+    Private TG904_CODTRASP_TE4 As String()
+    Private TG904_CODTRASP_TE5 As String()
+
 End Class
