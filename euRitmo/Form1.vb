@@ -47,7 +47,7 @@ Public Class Form1
         If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             Dim str = testParseFile(OpenFileDialog1.FileName)
             ''TextBox1.AppendText(str)
-            ''MessageBox.Show(str)
+            MessageBox.Show(str)
 
 
         End If
