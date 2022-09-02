@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dante\\source\\repos\\euRitmo\\euRitmo\\euRitmo.vbproj",
+      "projectUniqueName": "C:\\Users\\Dante\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj",
       "projectName": "euRitmo",
-      "projectPath": "C:\\Users\\Dante\\source\\repos\\euRitmo\\euRitmo\\euRitmo.vbproj",
+      "projectPath": "C:\\Users\\Dante\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj",
       "packagesPath": "C:\\Users\\Dante\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dante\\source\\repos\\euRitmo\\euRitmo\\obj\\",
+      "outputPath": "C:\\Users\\Dante\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dante\\AppData\\Roaming\\NuGet\\NuGet.Config",
