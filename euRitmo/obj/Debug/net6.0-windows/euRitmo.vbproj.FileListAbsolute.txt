@@ -25,3 +25,10 @@ C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\obj\Debug\net6.0-windows
 C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\obj\Debug\net6.0-windows\euRitmo.dll
 C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\obj\Debug\net6.0-windows\refint\euRitmo.dll
 C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\obj\Debug\net6.0-windows\euRitmo.pdb
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\bin\Debug\net6.0-windows\euRitmo.exe
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\bin\Debug\net6.0-windows\euRitmo.deps.json
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\bin\Debug\net6.0-windows\euRitmo.runtimeconfig.json
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\bin\Debug\net6.0-windows\euRitmo.dll
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\bin\Debug\net6.0-windows\euRitmo.pdb
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\obj\Debug\net6.0-windows\euRitmo.genruntimeconfig.cache
+C:\Users\Dante\Source\Repos\davide-info\euRitmo\euRitmo\obj\Debug\net6.0-windows\ref\euRitmo.dll
