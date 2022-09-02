@@ -162,5 +162,16 @@ Public Class Tsp
     Private TG904_CODTRASP_TE3 As String()
     Private TG904_CODTRASP_TE4 As String()
     Private TG904_CODTRASP_TE5 As String()
-
+    Private TG904_CODTRASP_RS As String()
+    Private TG904_CODTRASP_RSE As String()
+    Private TG904_CODTRASP_IND As String()
+    Private TG904_CODTRASP_CAP As String()
+    Private TG904_CODTRASP_LOC As String()
+    Private TG904_CODTRASP_TEL As String()
+    Private TG904_CODTRASP_TLX As String()
+    Private TG904_CODTRASP_FAX As String()
+    Private TG904_CODTRASP_EMAIL1 As String()
+    Private TG904_CODTRASP_EMAIL2 As String()
+    Private TG904_CODTRASP_EMAIL3 As String()
+    Private TG904_CODTRASP_DTPC As String()
 End Class
