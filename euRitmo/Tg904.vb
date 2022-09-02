@@ -131,3 +131,10 @@ Public Class Rub
     Private TG904_RUB_SERVIZIO As String()
     Private TG904_RUB_IND As String()
 End Class
+Public Class Pdv
+    Private TG904_RAGSOC_PDV As String()
+    Private TG904_RAGSOC_E_PDV As String()
+    Private TG904_TELEFONO_PDV As String()
+    Private TG904_TELEX_PDV As String()
+
+End Class
