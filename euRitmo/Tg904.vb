@@ -128,5 +128,6 @@ Public Class Forn
     Private TG904_CODFORR As String()
 End Class
 Public Class Rub
-
+    Private TG904_RUB_SERVIZIO As String()
+    Private TG904_RUB_IND As String()
 End Class
