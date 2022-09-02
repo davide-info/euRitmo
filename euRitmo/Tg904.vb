@@ -203,6 +203,15 @@ Public Class Mit
 End Class
 
 Public Class Det
-    ' Private TG904_SCHEMA As String()
+    Private TG904_SCHEMA As String()
+    Private TG904_NART_ORD_D As String()
+    Private TG904_NART_ORD_OM_D As String()
+    Private TG904_NART_CON_D As String()
+    Private TG904_NART_CON_OM_D As String()
+    Private TG904_ART_ORD_D As String()
+    Private TG904_CART_ORD_OM_D As String()
+    Private TG904_CART_CON_D As String()
+    Private TG904_CART_CON_OM_D As String()
+    Private TG904_PLT_CON_D As String() 'Arrivato a linea 235 file tg094.txt'
 
 End Class
