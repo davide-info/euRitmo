@@ -201,3 +201,8 @@ Public Class Mit
 
 
 End Class
+
+Public Class Det
+    ' Private TG904_SCHEMA As String()
+
+End Class
