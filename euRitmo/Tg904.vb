@@ -176,5 +176,28 @@ Public Class Tsp
     Private TG904_CODTRASP_DTPC As String()
 End Class
 Public Class Mit
-    ''Private TG904_SIGLA As String()
+    Private TG904_SIGLA As String()
+    Private TG904_DES_MAG As String()
+    Private TG904_IND_MAG As String()
+    Private TG904_LOC_MAG As String()
+    Private TG904_CODFG070 As String()
+    Private TG904_RAGSOC_CLI As String()
+    Private TG904_RAGSOC_E_CLI As String()
+    Private TG904_BANCA_CLI As String()
+    Private TG904_TELEFONO_CLI As String()
+    Private TG904_TELEX_CLI As String()
+    Private TG904_FAX_CLI As String()
+    Private TG904_IND_CLI As String()
+    Private TG904_CAP_CLI As String()
+    Private TG90_LOC_CLI As String()
+    Private TG904_PROV_CLI As String()
+    Private TG904_CODFISC_CLI As String()
+    Private TG904_PARTIVA_CLI As String()
+    Private TG904_TELEX_CLI1 As String()
+    Private TG904_FAX_CLI1 As String()
+    Private TG904_TEL_MAG As String()
+    Private TG904_TELEX_MAG As String()
+    Private TG904_FAX_MAG As String()
+
+
 End Class
