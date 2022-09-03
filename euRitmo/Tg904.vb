@@ -41,30 +41,199 @@ Public Class Dtope
 End Class
 Public Class Tes
     Private TG904_TRK As String
-    Public Sub setTG904_TRK(TG904_TRK)
-        Me.TG_904
+    Public Sub setTG904_TRK(TG904_TRK As String)
+        Me.TG_904_TRK = TG904_TRK
+
 
     End Sub
-    Private TG904_OP As String
-    Private TG904_TMOPE As String
-    Private TG904_DTPC As String
-    Private TG904_CMPT As String
-    Private TG904_STATO_ORD As String()
-    Private TG904_COD_BUYER As String()
-    Private TG904_DES_BUYER As String()
-    Private TG904_NART_ORD_T As String()
-    Private TG904_NART_CON_T As String()
-    Private TG904_CART_ORD_OMT_T As String()
-    Private TG904_CART_CON_T As String()
-    Private TG904_CART_CON_OM_T As String()
-    Private TG904_PLT_ORD_T As String()
-    Private TG904_PLT_CON_T As String()
-    Private TG904_VAL_ORD_T As String()
-    Private TG904_NOTE_ORD_T As String()
-    Private TG904_SC_ORD_T As String()
-    Private TG90_DTCON As String()
-    Private TG904_DTDOC As String()
+    Public Function getTG904_TRK()
+        Return TG904_TRK
+    End Function
 
+    Private TG904_OP As String
+    Public Sub setTG904_OP(TG904_OP As String)
+        Me.TG904_OP = TG904_OP
+
+    End Sub
+    Public Function getTG904_OP() As String
+        Return TG904_OP
+    End Function
+
+    Private TG904_TMOPE As String
+    Public Sub setTG904_TMOPE(TG904_TMOPE As String)
+        Me.TG904_TMOPE = TG904_TMOPE
+    End Sub
+    Public Function getTG904_TMOPE() As String
+        Return Me.TG904_TMOPE
+    End Function
+    Private TG904_DTPC As String
+    Public Sub setTG904_DTCP(TG94_DTCP As String)
+        Me.TG904_DTCP = TG904_DTPC
+    End Sub
+    Public Function getTG904_DTCP() As String
+        Return TG904_DTCP
+    End Function
+
+    Private TG904_CMPT As String
+    Public Sub setTG904_CMPT(TG904_CMPT As String)
+        Me.TG904_CMPT = TG904_CMPT
+
+    End Sub
+    Public Function getTG904_CMPT() As String
+        Return TG904_CMPT
+    End Function
+    Private TG904_STATO_ORD As String()
+    Public Sub setTG904_STATO_ORD(TG904_STATO_ORD As String())
+        Me.TG904_STATO_ORD = TG904_STATO_ORD
+
+
+    End Sub
+    Public Function getTG904_STATO_ORD() As String()
+        Return TG904_STATO_ORD
+
+    End Function
+
+    Private TG904_COD_BUYER As String()
+    Public Sub setTG904_COD_BUYER(TG904_COD_BUYER As String())
+        Me.TG904_COD_BUYER = TG904_COD_BUYER
+
+
+    End Sub
+    Public Function getTG904_COD_BUYER() As String()
+        Return TG904_COD_BUYER
+
+    End Function
+
+
+    Private TG904_DES_BUYER As String()
+    Public Sub setTG904_DES_BUYER(TG904_DES_BUYER As String())
+        Me.TG904_DES_BUYER = TG904_DES_BUYER
+
+    End Sub
+    Public Function getTG904_DES_BUYER() As String()
+        Return Me.TG904_DES_BUYER
+
+
+    End Function
+
+    Private TG904_NART_ORD_T As String()
+    Public Sub setTG904_NART_ORD_T(TG904_NART_ORD_T As String())
+        Me.TG904_NART_ORD_T = TG904_NART_ORD_T
+
+
+    End Sub
+
+
+    Private TG904_NART_CON_T As String()
+    Public Sub setTG904_NART_CON_T(TG904_NART_CON_T As String())
+        Me.TG904_NART_CON_T = TG904_NART_CON_T
+
+
+    End Sub
+
+    Private TG904_CART_ORD_OMT_T As String()
+    Public Sub setTG904_CART_ORD_OMT_T(TG904_CART_ORD_OMT_T As String())
+        Me.TG904_CART_ORD_OMT_T = TG904_CART_ORD_OMT_T
+
+
+    End Sub
+    Public Function getTG904_CART_ORD_OMT_T() As String()
+        Return Me.TG904_CART_ORD_OMT_T
+
+    End Function
+    Private TG904_CART_CON_T As String()
+    Public Sub setTG904_CART_CON_T(TG904_CART_CON_T As String())
+        Me.TG904_CART_CON_T = TG904_CART_CON_T
+
+
+    End Sub
+
+    Public Function getTG904_CART_CON_T() As String()
+        Return TG904_CART_CON_T
+
+    End Function
+
+    Private TG904_CART_CON_OM_T As String()
+    Public Sub setTG904_CART_CON_OM_T(TG904_CART_CON_OM_T As String())
+        Me.TG904_CART_CON_OM_T = TG904_CART_CON_OM_T
+
+
+
+    End Sub
+    Public Function getTG904_CART_CON_OM_T() As String()
+        Return TG904_CART_CON_OM_T
+
+    End Function
+
+    Private TG904_PLT_ORD_T As String()
+    Public Sub setTG904_PLT_ORD_T(TG904_PLT_ORD_T As String())
+        Me.TG904_PLT_ORD_T = TG904_PLT_ORD_T
+
+
+    End Sub
+    Public Function getTG904_PLT_ORD_T() As String()
+        Return TG904_PLT_ORD_T
+
+    End Function
+
+
+    Private TG904_PLT_CON_T As String()
+    Public Sub setTG904_PLT_CON_T(TG904_PLT_CON_T As String())
+        Me.TG904_PLT_CON_T = TG904_PLT_CON_T
+
+
+    End Sub
+    Public Function getTG904_PLT_CON_T() As String()
+        Return TG904_PLT_CON_T
+
+    End Function
+
+    Private TG904_VAL_ORD_T As String()
+    Private Sub setTG904_VAL_ORD_T(TG904_VAL_ORD_T As String())
+        Me.TG904_VAL_ORD_T = TG904_VAL_ORD_T
+
+
+    End Sub
+    Public Function getTG904_VAL_ORD_T() As String()
+        Return TG904_VAL_ORD_T
+    End Function
+
+    Private TG904_NOTE_ORD_T As String()
+    Public Sub setTG904_NOTE_ORD_T(TG904_NOTE_TG904_VAL_ORD_T As String())
+        Me.TG904_NOTE_ORD_T = TG904_NOTE_ORD_T
+
+
+    End Sub
+    Public Function GetTG904_NOTE_ORD_T() As String()
+        Return TG904_NOTE_ORD_T
+    End Function
+
+    Private TG904_SC_ORD_T As String()
+    Public Sub setTG904_SC_ORD_T(TG904_SC_ORD_T As String())
+        Me.TG904_SC_ORD_T = TG904_SC_ORD_T
+
+
+    End Sub
+    Public Function getTG904_SC_ORD_T() As String()
+        Return TG904_SC_ORD_T
+    End Function
+    Private TG904_DTCON As String()
+    Public Sub setTG90_DTCON(TG904_DTCON As String())
+        Me.TG904_DTCON = TG904_DTCON
+    End Sub
+    Public Function getTG90_DTCON() As String()
+        Return TG904_DTCON
+    End Function
+
+    Private TG904_DTDOC As String()
+    Public Sub setTG904_DTDOC(TG904_DTDOC As String())
+        Me.TG904_DTDOC = TG904_DTDOC
+
+
+    End Sub
+    Public Function getTG904_DTDOC() As String()
+        Return TG904_DTDOC
+    End Function
 
     Sub New()
 
