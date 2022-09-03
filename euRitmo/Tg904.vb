@@ -41,6 +41,10 @@ Public Class Dtope
 End Class
 Public Class Tes
     Private TG904_TRK As String
+    Public Sub setTG904_TRK(TG904_TRK)
+        Me.TG_904
+
+    End Sub
     Private TG904_OP As String
     Private TG904_TMOPE As String
     Private TG904_DTPC As String
@@ -202,6 +206,8 @@ Public Class Mit
 
 End Class
 
+'TO DO fare pull di Tg094.vb'
+
 Public Class Det
     Private TG904_SCHEMA As String()
     Private TG904_NART_ORD_D As String()
@@ -213,5 +219,30 @@ Public Class Det
     Private TG904_CART_CON_D As String()
     Private TG904_CART_CON_OM_D As String()
     Private TG904_PLT_CON_D As String() 'Arrivato a linea 235 file tg094.txt'
+    Private TG904_FORM_PLT_FORN       as String()
+    Private  TG904_CART_STRATO_FOR     as string()
+    Private TG904_NUM_STRATO_FOR As String()
+    Private TG904_QT_FOR_For As String()
+    Private TG904_QTA_TERMO_FOR  as String()
+    Private TG904_NOTE_ORD_D      as string()
+    Private TG904_PNT_CAR      as String()
+    private TG904_STATO_RIG   as String()    
 
 End Class
+'Arrivato riga 248'
+Public Class Pro
+
+
+End Class
+
+
+
+
+
+
+
+
+
+
+
+
