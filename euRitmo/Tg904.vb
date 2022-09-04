@@ -1,5 +1,14 @@
 ﻿Public Class Tg904
     Private Tes As Tes
+    Private Dtope As Dtope
+    Private rub As Rub
+    Private forn As Forn
+    Private tsp As Tsp
+    Private pdv As Pdv
+    Private Pro As Pro
+    Private cols As List(Of Col)
+
+
 
 
     Friend Sub setTes(Tes As Tes)
@@ -305,6 +314,14 @@ Public Class Forn
         Return TG904_FAX_FOR
     End Function
     Private TG904_RAPP As String()
+
+    Public Sub setTG904_RAP(TG904_RAP As String())
+        Me.TG904_RAP = TG904_RAP
+    End Sub
+    Public Function getTG904_RAP() As String()
+        Return TG904_RAP
+    End Function
+
     Private TG904_CAPO_AREA As String()
     Private TG904_CAPO_AREA_TEL As String()
     Private TG904_DIR_COMM As String()
