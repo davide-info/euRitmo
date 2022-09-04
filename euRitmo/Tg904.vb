@@ -261,11 +261,49 @@ Public Class Tes
 End Class
 Public Class Forn
     Private TG904_RAGSOC_For As String()
+    Public Sub setTG904_RAGSOC_For(TG904_RAGSOC_For As String())
+        Me.TG904_RAGSOC_E_FOR = TG904_RAGSOC_For
+
+
+    End Sub
+    Public Function getTG904_RAGSOC_For() As String()
+        Return TG904_RAGSOC_For
+    End Function
+
     Private TG904_RAGSOC_E_FOR As String()
+    Public Sub setTG904_RAGSOC_E_FOR(TG904_RAGSOC_E_FOR As String())
+        Me.TG904_RAGSOC_E_FOR = TG904_RAGSOC_E_FOR
+    End Sub
+
+
     Private TG904_BANCA_FOR As String()
+    Public Sub setTG904_BANCA_FOR(TG904_BANCA_FOR As String())
+        Me.TG904_BANCA_FOR = TG904_BANCA_FOR
+    End Sub
+    Public Function getTG904_BANCA_FOR()
+        Return TG904_BANCA_FOR
+    End Function
     Private TG904_TELEFONO_FOR As String()
+    Public Sub setTG904_TELEFONO_FOR(TG904_TELEFONO_FOR As String())
+        Me.TG904_TELEFONO_FOR = TG904_TELEFONO_FOR
+    End Sub
+    Public Function getTG904_TELEFONO_FOR() As String()
+        Return TG904_TELEFONO_FOR
+    End Function
     Private TG904_TELEX_FOR As String()
+    Public Sub setTG904_TELEX_FOR(TG904_TELEX_FOR As String())
+        Me.TG904_TELEX_FOR = TG904_TELEX_FOR
+    End Sub
+    Public Function getTG904_TELEX_FOR() As String()
+        Return TG904_TELEX_FOR
+    End Function
     Private TG904_FAX_FOR As String()
+    Public Sub setTG904_FAX_FOR(TG904_FAX_FOR As String)
+        Me.TG904_FAX_FOR = TG904_FAX_FOR
+    End Sub
+    Public Function getTG904_FAX_FOR() As String()
+        Return TG904_FAX_FOR
+    End Function
     Private TG904_RAPP As String()
     Private TG904_CAPO_AREA As String()
     Private TG904_CAPO_AREA_TEL As String()
@@ -375,7 +413,7 @@ Public Class Mit
 
 End Class
 
-'TO DO fare pull di Tg094.vb'
+'TO DO fare pull di Tg094.vb pc nuovo'
 
 Public Class Det
     Private TG904_SCHEMA As String()
@@ -400,10 +438,76 @@ Public Class Det
 End Class
 'Arrivato riga 248'
 Public Class Pro
+    Private TG904_CODPRO As String()
+    Private TG904_DES_PRO As String()
+    Private TG904_BCODE As String()
+    Private TG904_TIPO As String()
+    Private TG904_PUM As String()
+    Private TG904_PUM_UM As String()
+    Private TG904_PUM_QTA As String()
+    Private TG904_GR As String()
+    Private TG904_PESO_PRO As String()
+    Private TG904_DIM_PRO As String()
+    Private TG904_DIM_LATO1_PRO As String()
+    Private TG904_DIM_LATO2_PRO As String()
+    Private TG904_DIM_LATO3_PRO As String()
+    Private TG904_PNT_SC_CAR As String()
+    Private TG904_FORMA As String()
+    Private TG904_DURATA As String()
+    Private TG904_QTA_BCODE As String()
+    Private TG904_QTA_FORN As String()
+    Private TG904_QTA_TERMO As String()
+    Private TG904_FORM_PLT_MAG As String()
+    Private TG904_CART_STRATO_MAG As String()
+    Private TG904_QTA_VENDITA As String()
+    Private TG904_PESO_UVC As String()
+    Private TG904_DIM_UVC As String()
+    Private TG904_Dim_LATO1_UVC As String()
+    Private TG904_DIM_LATO2_UVC As String()
+    Private TG904_DIM_LATO3_UVC As String()
+    Private TG904_VARIETA As String()
+    Private TG904_NAZORI As String()
+    Private TG904_LOCAL As String()
+    Private TG904_CALIBRO As String()
+    Private TG904_CATEG As String()
+    Private TG904_TCONF As String()
+    Private TG904_TIMB As String()
+    Private TG904_FIMB As String()
+    Private TG904_UM As String()
+    Private TG904_CODIVA As String()
+    Private TG904_ALIQ As String()
+    Private TG904_CODF_TV As String()
+    Private TG904_CODF_E As String()
+    Private TG90_RG_LIST As String()
 
+    Private TG904_CODF As String()
+    Private TG904_PG_LIST As String()
+    Private TG904_P_BUYER As String()
+    Private TG904_P_DES_BUYER As String()
+    Private TG904_BCODE_IMB As String()
+    Private TG904_QTA_BCODE_IMB As String()
+    Private TG904_DTSCAD1 As String()
+    Private TG904_DTSCAD2 As String()
+    Private TG904_ART62 As String()
+    Private TG904_RE5 As String()
+    Private TG904_LNF As String()
+    Private TG904_BCODA As String()
+    Private TG904_DTINS_BCODE As String()
+    Private TG904_DTINS_BCODE_IMB As String()
+    Private TG904_DTINS_BCODA As String()
+    Private TG904_GR1 As String()
+    Private TG904_GR2 As String()
+    Private TG904_GR3 As String()
+    Private TG904_GR4 As String()
+    Private TG904_GR5 As String()
 
 End Class
 
+Public Class Col
+    Private TG904_COS As String()
+    Private TG904_COSV As String()
+    Private TG904_STRINGA As String()
+End Class
 
 
 
