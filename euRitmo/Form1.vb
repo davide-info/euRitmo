@@ -15,7 +15,7 @@ Public Class Form1
             tg904 = parseLine2(line)
 
         Next
-        MessageBox.Show("RISULTATO " & result.ToString())
+        ''   MessageBox.Show("RISULTATO " & result.ToString())
 
         Return tg904
 
