@@ -7,10 +7,35 @@
     Private pdv As Pdv
     Private Pro As Pro
     Private cols As List(Of Col)
+    Private mit As Mit
+    Private endtr As EndTr
+    Public Sub setend(endtr As EndTr)
+        Me.endtr = endtr
+
+
+    End Sub
+
     Public Sub setDtope(dtope As Dtope)
         Me.Dtope = dtope
 
     End Sub
+
+    Public Sub setRub(rub As Rub)
+        Me.rub = rub
+    End Sub
+    Public Sub setPdv(pdv As Pdv)
+        Me.pdv = pdv
+    End Sub
+
+    Public Function getRub() As Rub
+        Return rub
+    End Function
+    Public Sub setmit(mit As Mit)
+        Me.mit = mit
+    End Sub
+    Public Function getMit() As Mit
+        Return mit
+    End Function
     Public Function getDtope() As Dtope
         Return Dtope
     End Function
@@ -27,15 +52,16 @@
     Public Function getTes() As Tes
         Return Tes
     End Function
-    Public Sub setFon(forn As Forn)
+    Public Sub setForn(forn As Forn)
         Me.forn = forn
     End Sub
     Public Function getForn() As Forn
         Return forn
     End Function
 
-
-
+    Friend Sub setpro(pro As Pro)
+        Me.Pro = pro
+    End Sub
 End Class
 
 Public Class Dtope
@@ -605,6 +631,15 @@ Public Class Col
     Private TG904_COS As String()
     Private TG904_COSV As String()
     Private TG904_STRINGA As String()
+End Class
+Public Class EndTr
+    Public Sub New()
+
+    End Sub
+    Public Sub New(endStr)
+
+    End Sub
+    Private TG904_NRK As String()
 End Class
 
 

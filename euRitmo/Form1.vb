@@ -32,10 +32,63 @@ Public Class Form1
             tg904.setTes(tes)
         End If
         If (line.startsWith("FOR")) Then
-            Dim forn As New Forn(line.substring(0, 3))
+            Dim forn As New Forn(line.Substring(0, 3))
+            tg904.setForn(forn)
 
         End If
+        If (line.StartsWith("RUB")) Then
+            Dim rub As New Rub(line.Substring(0, 3))
+            tg904.setrub(rub)
 
+
+
+        End If
+        If (line.StartsWith("MIT")) Then
+            Dim mit As New Mit(line.Substring(0, 3))
+            tg904.setmit(mit)
+        End If
+        If (line.StartsWith("PRO")) Then
+            Dim pro As New Pro(line.Substring(0, 3))
+            tg904.setpro(pro)
+        End If
+        Dim cols As New List(Of Col)
+
+
+        If (line.StartsWith("CO1")) Then
+
+            cols.Add(New Col(line.Substring(0, 3)))
+
+
+
+        End If
+        If (line.StartsWith("CO2")) Then
+            cols.Add(New Col(line.Substring(0, 3)))
+        End If
+        If (line.StartsWith("CO3")) Then
+            cols.Add(New Col(line.Substring(0, 3)))
+
+        End If
+        If (line.StartsWith("CO4")) Then
+            cols.Add(New Col(line.Substring(0, 3)))
+        End If
+        If (line.StartsWith("CO5")) Then
+            cols.Add(New Col(line.Substring(0, 3)))
+        End If
+        If (line.StartsWith("CO6")) Then
+            cols.Add(New Col(line.Substring(0, 3)))
+        End If
+        tg904.setCols(cols)
+
+        If (line.StartsWith("DET")) Then
+            tg904.setDtope(New Dtope(line.Substring(0, 3)))
+
+
+
+        End If
+        If (line.StartsWith("END")) Then
+            tg904.setEnd(New EndTr(line.Substring(0, 3)))
+
+        End If
 
         Return tg904
 
