@@ -7,20 +7,46 @@
     Private pdv As Pdv
     Private Pro As Pro
     Private cols As List(Of Col)
+    Public Sub setDtope(dtope As Dtope)
+        Me.Dtope = dtope
 
-
-
+    End Sub
+    Public Function getDtope() As Dtope
+        Return Dtope
+    End Function
+    Public Sub setCols(cols As List(Of Col))
+        Me.cols = cols
+    End Sub
+    Public Function getCols() As List(Of Col)
+        Return cols
+    End Function
 
     Friend Sub setTes(Tes As Tes)
         Me.Tes = Tes
     End Sub
-
+    Public Function getTes() As Tes
+        Return Tes
+    End Function
+    Public Sub setFon(forn As Forn)
+        Me.forn = forn
+    End Sub
+    Public Function getForn() As Forn
+        Return forn
+    End Function
 
 
 
 End Class
 
 Public Class Dtope
+
+    Public Sub New()
+
+    End Sub
+    Public Sub New(dtopeStr As String)
+
+    End Sub
+
     Private DTOPE_SAA As String()
     Private DTOPE_MM As String()
     Private DTOPE_GG As String()
@@ -51,7 +77,7 @@ End Class
 Public Class Tes
     Private TG904_TRK As String
     Public Sub setTG904_TRK(TG904_TRK As String)
-        Me.TG_904_TRK = TG904_TRK
+        Me.TG904_TRK = TG904_TRK
 
 
     End Sub
@@ -77,10 +103,10 @@ Public Class Tes
     End Function
     Private TG904_DTPC As String
     Public Sub setTG904_DTCP(TG94_DTCP As String)
-        Me.TG904_DTCP = TG904_DTPC
+        Me.TG904_DTPC = TG904_DTPC
     End Sub
     Public Function getTG904_DTCP() As String
-        Return TG904_DTCP
+        Return TG904_DTPC
     End Function
 
     Private TG904_CMPT As String
@@ -269,6 +295,14 @@ Public Class Tes
 
 End Class
 Public Class Forn
+
+    Public Sub New()
+
+    End Sub
+    Public Sub New(stringForn As String)
+
+    End Sub
+
     Private TG904_RAGSOC_For As String()
     Public Sub setTG904_RAGSOC_For(TG904_RAGSOC_For As String())
         Me.TG904_RAGSOC_E_FOR = TG904_RAGSOC_For
@@ -307,7 +341,7 @@ Public Class Forn
         Return TG904_TELEX_FOR
     End Function
     Private TG904_FAX_FOR As String()
-    Public Sub setTG904_FAX_FOR(TG904_FAX_FOR As String)
+    Public Sub setTG904_FAX_FOR(TG904_FAX_FOR As String())
         Me.TG904_FAX_FOR = TG904_FAX_FOR
     End Sub
     Public Function getTG904_FAX_FOR() As String()
@@ -315,11 +349,11 @@ Public Class Forn
     End Function
     Private TG904_RAPP As String()
 
-    Public Sub setTG904_RAP(TG904_RAP As String())
-        Me.TG904_RAP = TG904_RAP
+    Public Sub setTG904_RAP(TG904_RAPP As String())
+        Me.TG904_RAPP = TG904_RAPP
     End Sub
     Public Function getTG904_RAP() As String()
-        Return TG904_RAP
+        Return TG904_RAPP
     End Function
 
     Private TG904_CAPO_AREA As String()
@@ -358,8 +392,22 @@ End Class
 Public Class Rub
     Private TG904_RUB_SERVIZIO As String()
     Private TG904_RUB_IND As String()
+    Public Sub New()
+
+    End Sub
+    Public Sub New(stringRub As String)
+
+    End Sub
+
 End Class
 Public Class Pdv
+    Public Sub New()
+
+    End Sub
+    Public Sub New(stringPadv As String)
+
+    End Sub
+
     Private TG904_RAGSOC_PDV As String()
     Private TG904_RAGSOC_E_PDV As String()
     Private TG904_TELEFONO_PDV As String()
@@ -380,10 +428,17 @@ Public Class Pdv
     Private TG904_EMAIL3_PDV As String()
     Private TG904_CODSEDEAMM_PDV As String()
     Private TG904_CODSEDELEG_PDV As String()
-    Private TG904_COD_PDV as String()
+    Private TG904_COD_PDV As String()
 End Class
 
 Public Class Tsp
+    Public Sub New()
+
+    End Sub
+    Public Sub New(stringtsp As String)
+
+    End Sub
+
     Private TG904_CODTRASP As String()
     Private TG904_CODTRASP_TE1 As String()
     Private TG904_CODTRASP_TE2 As String()
@@ -404,6 +459,13 @@ Public Class Tsp
     Private TG904_CODTRASP_DTPC As String()
 End Class
 Public Class Mit
+
+    Public Sub New()
+
+    End Sub
+    Public Sub New(stringmit As String)
+
+    End Sub
     Private TG904_SIGLA As String()
     Private TG904_DES_MAG As String()
     Private TG904_IND_MAG As String()
@@ -433,6 +495,13 @@ End Class
 'TO DO fare pull di Tg094.vb pc nuovo'
 
 Public Class Det
+    Public Sub New()
+
+    End Sub
+    Public Sub New(stringdet As String)
+
+    End Sub
+
     Private TG904_SCHEMA As String()
     Private TG904_NART_ORD_D As String()
     Private TG904_NART_ORD_OM_D As String()
@@ -443,18 +512,24 @@ Public Class Det
     Private TG904_CART_CON_D As String()
     Private TG904_CART_CON_OM_D As String()
     Private TG904_PLT_CON_D As String() 'Arrivato a linea 235 file tg094.txt'
-    Private TG904_FORM_PLT_FORN       as String()
-    Private  TG904_CART_STRATO_FOR     as string()
+    Private TG904_FORM_PLT_FORN As String()
+    Private TG904_CART_STRATO_FOR As String()
     Private TG904_NUM_STRATO_FOR As String()
     Private TG904_QT_FOR_For As String()
-    Private TG904_QTA_TERMO_FOR  as String()
-    Private TG904_NOTE_ORD_D      as string()
-    Private TG904_PNT_CAR      as String()
-    private TG904_STATO_RIG   as String()    
+    Private TG904_QTA_TERMO_FOR As String()
+    Private TG904_NOTE_ORD_D As String()
+    Private TG904_PNT_CAR As String()
+    Private TG904_STATO_RIG As String()
 
 End Class
 'Arrivato riga 248'
 Public Class Pro
+    Public Sub New()
+
+    End Sub
+    Public Sub New(proStr As String)
+
+    End Sub
     Private TG904_CODPRO As String()
     Private TG904_DES_PRO As String()
     Private TG904_BCODE As String()
@@ -521,6 +596,12 @@ Public Class Pro
 End Class
 
 Public Class Col
+    Public Sub New()
+
+    End Sub
+    Public Sub New(colStr As String)
+
+    End Sub
     Private TG904_COS As String()
     Private TG904_COSV As String()
     Private TG904_STRINGA As String()

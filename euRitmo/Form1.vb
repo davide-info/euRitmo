@@ -6,18 +6,42 @@ Public Class Form1
     Private Function testParseFile(fileName As String)
         Dim result As New StringBuilder()
         Dim lines = File.ReadAllLines(fileName)
+        Dim tg904 As Tg904 = Nothing
+
+
 
 
         For Each line As String In lines
-            result.Append(parseLine(line))
+            tg904 = parseLine2(line)
 
         Next
         MessageBox.Show("RISULTATO " & result.ToString())
 
-        Return result.ToString()
+        Return tg904
 
 
     End Function
+
+
+    Private Function parseLine2(line As String) As Tg904
+        Dim tg904 As New Tg904()
+
+        If (line.startsWith("TES")) Then
+
+            Dim tes As New Tes(line.substring(0, 3))
+            tg904.setTes(tes)
+        End If
+        If (line.startsWith("FOR")) Then
+            Dim forn As New Forn(line.substring(0, 3))
+
+        End If
+
+
+        Return tg904
+
+
+    End Function
+
 
     Private Function parseLine(line As String) As String
         Dim result As New StringBuilder()
