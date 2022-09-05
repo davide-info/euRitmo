@@ -3,7 +3,8 @@ Imports System.IO
 Imports System.Text.RegularExpressions
 
 Public Class Form1
-    Private Function testParseFile(fileName As String)
+    Private Function testParseFile(fileName As String) As Tg904
+
         Dim result As New StringBuilder()
         Dim lines = File.ReadAllLines(fileName)
         Dim tg904 As Tg904 = Nothing
@@ -124,7 +125,7 @@ Public Class Form1
         If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             Dim str = testParseFile(OpenFileDialog1.FileName)
             ''TextBox1.AppendText(str)
-            MessageBox.Show(str)
+            ''MessageBox.Show(str)
 
 
         End If
