@@ -620,8 +620,29 @@ Public Class Pdv
     Public Sub New()
 
     End Sub
-    Public Sub New(stringPadv As String)
-        MessageBox.Show("PDV " & stringPadv)
+    Public Sub New(stringPdv As String)
+        MessageBox.Show("PDV " & stringPdv)
+        TG904_RAGSOC_PDV = stringPdv.Substring(3, 50)
+        TG904_RAGSOC_E_PDV = stringPdv.Substring(53, 40)
+        TG904_TELEFONO_PDV = stringPdv.Substring(93, 15)
+        TG904_TELEX_PDV = stringPdv.Substring(108, 10)
+        TG904_FAX_PDV = stringPdv.Substring(118, 10)
+        TG904_IND_PDV = stringPdv.Substring(128, 50)
+        TG904_CAP_PDV = stringPdv.Substring(178, 5)
+        TG904_LOC_PDV = stringPdv.Substring(183, 50)
+        TG904_PROV_PDV = stringPdv.Substring(233, 3)
+        TG904_IND_BC_PDV = stringPdv.Substring(236, 50)
+        TG904_CAP_BC_PDV = stringPdv.Substring(286, 5)
+        TG904_LOC_BC_PDV = stringPdv.Substring(291, 50)
+        TG904_PROV_BC_PDV = stringPdv.Substring(341, 3)
+        TG904_CODFISC_PDV = stringPdv.Substring(344, 16)
+        TG904_PARTIVA_PDV = stringPdv.Substring(360, 11)
+        TG904_EMAIL1_PDV = stringPdv.Substring(371, 50)
+        TG904_EMAIL2_PDV = stringPdv.Substring(421, 50)
+        TG904_EMAIL3_PDV = stringPdv.Substring(471, 50)
+        TG904_CODSEDEAMM_PDV = stringPdv.Substring(521, 6)
+        TG904_CODSEDELEG_PDV = stringPdv.Substring(527, 6)
+        TG904_COD_PDV = stringPdv.Substring(533, 6)
 
     End Sub
 
