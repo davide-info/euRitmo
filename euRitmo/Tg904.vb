@@ -778,6 +778,7 @@ Public Class Mit
 End Class
 
 'TO DO fare pull di Tg094.vb pc nuovo'
+'Arrivato a pagina 288 tg904.txt'
 
 Public Class Det
     Public Sub New()
