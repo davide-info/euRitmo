@@ -1,5 +1,8 @@
-﻿Imports System.Security.Cryptography
+﻿Imports System.Net
+Imports System.Security.Cryptography
+Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.AxHost
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar
 Imports Microsoft.VisualBasic.ApplicationServices
@@ -466,9 +469,54 @@ Public Class Forn
     End Sub
     Public Sub New(stringForn As String)
         MessageBox.Show("FORN " & stringForn)
+        TG904_RAGSOC_For = stringForn.Substring(3, 50)
+        TG904_RAGSOC_E_FOR = stringForn.Substring(53, 40)
+        TG904_BANCA_FOR = stringForn.Substring(93, 35)
+        TG904_RAPP_TEL = stringForn.Substring(128, 15)
+        TG904_TELEX_FOR = stringForn.Substring(143, 10)
+        TG904_FAX_FOR = stringForn.Substring(153, 10)
+        TG904_RAPP = stringForn.Substring(163, 35)
+        TG904_RAPP_TEL = stringForn.Substring(198, 15)
+        TG904_CAPO_AREA = stringForn.Substring(213, 35)
+        TG904_CAPO_AREA_TEL = stringForn.Substring(248, 15)
+        TG904_DIR_COMM = stringForn.Substring(263, 35)
+        TG904_DIR_COMM_TEL = stringForn.Substring(298, 15)
+        TG904_COD_PAG1 = stringForn.Substring(313, 3)
+        TG904_COD_PAG2 = stringForn.Substring(316, 3)
+        TG904_COD_PAG3 = stringForn.Substring(319, 3)
+        TG904_NOTE1_FOR = stringForn.Substring(322, 72)
+        TG904_NOTE2_For = stringForn.Substring(394, 72)
+        TG904_IND_FOR = stringForn.Substring(466, 50)
+        TG904_CAP_FOR = stringForn.Substring(516, 5)
+        TG904_LOC_FOR = stringForn.Substring(521, 50)
+        TG904_PROV_FOR = stringForn.Substring(571, 3)
+        TG904_CODFISC_For = stringForn.Substring(574, 16)
+        ''MessageBox.Show("CODICE FISCALE FORNITORE " & TG904_CODFISC_For)
+        TG904_PARTIVA_FOR = stringForn.Substring(590, 11)
+        TG904_ORA_PREF = stringForn.Substring(601, 4)
+        TG904_EMAIL1 = stringForn.Substring(605, 50)
+        '' MessageBox.Show("Email fornitore " & TG904_EMAIL1)
+        TG904_EMAIL2 = stringForn.Substring(655, 50)
+        TG904_EMAIL3 = stringForn.Substring(705, 50)
+        TG904_WEB = stringForn.Substring(755, 50)
+
+
+        TG904_TELEX_FOR1 = stringForn.Substring(805, 15)
+        ''  MessageBox.Show("Telex-for1 " & TG904_TELEX_FOR1)
+        TG904_FAX_FOR1 = stringForn.Substring(820, 15)
+        TG904_COD_PAG = stringForn.Substring(835, 3)
+        TG904_COD_PAG_DES = stringForn.Substring(838, 30)
+        TG904_FG050_FLAG1 = stringForn.Substring(868, 1)
+        TG904_FG050_FLAG2 = stringForn.Substring(869, 1)
+        TG904_FG050_FLAG3 = stringForn.Substring(870, 1)
+        TG904_FG050_FLAG4 = stringForn.Substring(871, 1)
+        TG904_FG050_FLAG5 = stringForn.Substring(872, 1)
+        TG904_CODFORR = stringForn.Substring(873, 6)
+
     End Sub
 
     Friend TG904_RAGSOC_For As String
+    Friend TG904_RAPP_TEL As String
     Public Sub setTG904_RAGSOC_For(TG904_RAGSOC_For As String)
         Me.TG904_RAGSOC_E_FOR = TG904_RAGSOC_For
 
@@ -537,8 +585,8 @@ Public Class Forn
     Friend TG904_CODFISC_For As String
     Friend TG904_PARTIVA_FOR As String
     Friend TG904_ORA_PREF As String
-    Friend TG904_HH_PREF As String
-    Friend TG904_MM_PREF As String
+    '' Friend TG904_HH_PREF As String
+    '' Friend TG904_MM_PREF As String
     Friend TG904_EMAIL1 As String
     Friend TG904_EMAIL2 As String
     Friend TG904_EMAIL3 As String
@@ -562,6 +610,9 @@ Public Class Rub
     End Sub
     Public Sub New(stringRub As String)
         MessageBox.Show("RUB " & stringRub)
+        TG904_RUB_SERVIZIO = stringRub.Substring(3, 8)
+        TG904_RUB_IND = stringRub.Substring(12, 200)
+
     End Sub
 
 End Class
