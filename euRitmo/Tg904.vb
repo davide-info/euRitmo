@@ -1,4 +1,5 @@
 ﻿Imports System.Net
+Imports System.Runtime.Intrinsics.X86
 Imports System.Security.Cryptography
 Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.AxHost
@@ -675,8 +676,28 @@ Public Class Tsp
     End Sub
     Public Sub New(stringtsp As String)
         MessageBox.Show("TSP " & stringtsp)
-    End Sub
+        TG904_CODTRASP = stringtsp.Substring(3, 6)
+        TG904_CODTRASP_TE1 = stringtsp.Substring(9, 1)
+        TG904_CODTRASP_TE2 = stringtsp.Substring(10, 1)
+        TG904_CODTRASP_TE3 = stringtsp.Substring(11, 1)
+        TG904_CODTRASP_TE4 = stringtsp.Substring(12, 1)
+        TG904_CODTRASP_TE5 = stringtsp.Substring(13, 1)
+        TG904_CODTRASP_RS = stringtsp.Substring(14, 50)
+        TG904_CODTRASP_RSE = stringtsp.Substring(64, 40)
+        TG904_CODTRASP_IND = stringtsp.Substring(104, 50)
+        TG904_CODTRASP_CAP = stringtsp.Substring(154, 5)
+        TG904_CODTRASP_LOC = stringtsp.Substring(159, 50)
+        TG904_CODTRASP_TEL = stringtsp.Substring(209, 15)
+        TG904_ODTRASP_TLX = stringtsp.Substring(224, 10)
+        TG904_CODTRASP_FAX = stringtsp.Substring(234, 10)
+        TG904_CODTRASP_EMAIL1 = stringtsp.Substring(244, 50)
+        TG904_CODTRASP_EMAIL2 = stringtsp.Substring(294, 50)
+        TG904_CODTRASP_EMAIL3 = stringtsp.Substring(344, 50)
+        TG904_CODTRASP_DTPC = stringtsp.Substring(394, 8)
 
+
+    End Sub
+    Friend TG904_ODTRASP_TLX As String
     Friend TG904_CODTRASP As String
     Friend TG904_CODTRASP_TE1 As String
     Friend TG904_CODTRASP_TE2 As String
