@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports System.Formats.Asn1.AsnWriter
+Imports System.Net
 Imports System.Runtime.Intrinsics.X86
 Imports System.Security.Cryptography
 Imports System.Text.RegularExpressions
@@ -835,8 +836,51 @@ Public Class Pro
     End Sub
     Public Sub New(proStr As String)
         MessageBox.Show("PRO " & proStr)
+        TG904_CODPRO = proStr.Substring(3, 12)
+        TG904_DES_PRO = proStr.Substring(15, 50)
+        TG904_BCODE = proStr.Substring(65, 14)
+        TG904_TIPO = proStr.Substring(79, 1)
+        TG904_PUM = proStr.Substring(80, 8)
+        TG904_PUM_UM = proStr.Substring(80, 2)
+        TG904_PUM_QTA = proStr.Substring(82, 6)
+        TG904_GR = proStr.Substring(88, 2)
+        TG904_PESO_PRO = proStr.Substring(90, 6)
+        TG904_DIM_PRO = proStr.Substring(96, 12)
+        TG904_DIM_LATO1_PRO = proStr.Substring(96, 4)
+        TG904_DIM_LATO2_PRO = proStr.Substring(100, 4)
+        TG904_DIM_LATO3_PRO = proStr.Substring(104, 4)
+        TG904_PNT_SC_CAR = proStr.Substring(108, 6)
+        TG904_FORMA = proStr.Substring(114, 3)
+        TG904_DURATA = proStr.Substring(117, 4)
+        TG904_QTA_BCODE = proStr.Substring(121, 4)
+        TG904_QTA_FORN = proStr.Substring(125, 6)
+        TG904_QTA_TERMO = proStr.Substring(131, 6)
+        TG904_FORM_PLT_MAG = proStr.Substring(137, 8)
+        TG904_CART_STRATO_MAG = proStr.Substring(137, 4)
+        TG904_NUM_STRATO_MAG = proStr.Substring(141, 4)
+        TG904_QTA_VENDITA = proStr.Substring(145, 6)
+        TG904_PESO_UVC = proStr.Substring(151, 6)
+        TG904_DIM_UVC = proStr.Substring(157, 12)
+        TG904_Dim_LATO1_UVC = proStr.Substring(157, 4)
+        TG904_DIM_LATO2_UVC = proStr.Substring(161, 4)
+        TG904_DIM_LATO3_UVC = proStr.Substring(165, 4)
+        TG904_VARIETA = proStr.Substring(170, 10)
+        TG904_NAZORI = proStr.Substring(180, 4)
+        TG904_LOCAL = proStr.Substring(184, 5)
+        TG904_CALIBRO = proStr.Substring(189, 7)
+        TG904_CATEG = proStr.Substring(196, 2)
+        TG904_TCONF = proStr.Substring(198, 4)
+        TG904_TIMB = proStr.Substring(202, 3)
+        TG904_FIMB = proStr.Substring(205, 1)
+        TG904_UM = proStr.Substring(206, 2)
+        TG904_CODIVA = proStr.Substring(208, 3)
+        TG904_ALIQ = proStr.Substring(211, 4)
+        TG904_CODF_TV = proStr.Substring(215, 200)
+
+
     End Sub
     Friend TG904_CODPRO As String
+    Friend TG904_NUM_STRATO_MAG As String
     Friend TG904_DES_PRO As String
     Friend TG904_BCODE As String
     Friend TG904_TIPO As String
