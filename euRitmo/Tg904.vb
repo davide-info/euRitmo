@@ -1,4 +1,10 @@
-﻿Public Class Tg904
+﻿Imports System.Security.Cryptography
+Imports System.Windows.Forms.AxHost
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar
+Imports Microsoft.VisualBasic.ApplicationServices
+
+Public Class Tg904
     Friend Tes As Tes
     Friend Dtope As Dtope
     Friend rub As Rub
@@ -344,14 +350,100 @@ Public Class Tes
     Public Sub New()
 
     End Sub
-
+    Friend TG904_ORD As String
+    Friend Tg904_DTORD As String
+    Friend TG904_MAG As String
+    Friend TG904_CODFOR As String
+    Friend TG904_CART_ORD_T As String
+    Friend TG904_CART_ORD_OM_T As String
+    Friend TG904_NDOC As String
+    Friend TG904_CAU As String
+    Friend TG904_CAU_DES As String
+    Friend TG904_TRANS As String
+    Friend TG904_DESOP As String
+    Friend TG904_EDI_MITT1 As String
+    Friend Tg904_EDI_MITT2 As String
+    Friend TG904_EDI_DEST1 As String
+    Friend TG904_EDI_DEST2 As String
+    Friend TG904_FHH As String
+    Friend TG904_FHH_DES As String
+    Friend TG904_FHH_TMI_HH As String
+    Friend Tg904_FHH_TMI_MM As String
+    Friend TG904_FHH_TMF_HH As String
+    Friend TG904_FHH_TMF_MM As String
+    Friend Tg904_MTO_IND As String
+    Friend TG904_FAX_NUM As String
+    Friend TG904_NOME_BUYER As String
+    Friend TG904_CGNM_BUYER As String
+    Friend Tg904_CELL_BUYER As String
+    Friend Tg904_EMAIL_BUYER As String
+    Friend Tg904_ID_CNT As String
+    Friend TG904_CPAG As String
+    Friend TG904_CPAG_DES As String
+    Friend TG904_NAS_CODFORN As String
+    Friend TG904_NAS_QCODFORN As String
+    Friend Tg904_TEEDIUM As String
+    Friend Tg904_TEMEA As String
+    Friend TG904_TEOM As String
     Public Sub New(ByVal stringTes As String)
         MessageBox.Show("TES " & stringTes)
 
         TG904_TRK = stringTes.Substring(0, 3)
         TG904_OP = stringTes.Substring(3, 1)
         TG904_TMOPE = stringTes.Substring(12, 8)
+        TG904_ORD = stringTes.Substring(20, 10)
+        Tg904_DTORD = stringTes.Substring(30, 8)
+        TG904_MAG = stringTes.Substring(38, 2)
+        TG904_CODFOR = stringTes.Substring(40, 6)
+        TG904_DTPC = stringTes.Substring(46, 8)
+        TG904_CMPT = stringTes.Substring(54, 4)
+        TG904_STATO_ORD = stringTes.Substring(58, 1)
+        TG904_COD_BUYER = stringTes.Substring(59, 4)
+        TG904_DES_BUYER = stringTes.Substring(63, 8)
+        TG904_NART_ORD_T = stringTes.Substring(71, 8) 'Togliamo il segno?'
+        TG904_NART_CON_T = stringTes.Substring(77, 6)
+        TG904_CART_ORD_T = stringTes.Substring(83, 10)
+        TG904_CART_ORD_OM_T = stringTes.Substring(93, 10)
+        TG904_CART_CON_T = stringTes.Substring(103, 10)
+        TG904_CART_CON_OM_T = stringTes.Substring(113, 10)
+        TG904_PLT_ORD_T = stringTes.Substring(123, 8)
+        TG904_PLT_CON_T = stringTes.Substring(131, 8)
+        TG904_VAL_ORD_T = stringTes.Substring(139, 14)
+        TG904_NOTE_ORD_T = stringTes.Substring(153, 80)
+        TG904_SC_ORD_T = stringTes.Substring(233, 6)
+        TG904_DTCON = stringTes.Substring(239, 8)
+        TG904_DTDOC = stringTes.Substring(247, 8)
+        TG904_NDOC = stringTes.Substring(255, 11)
+        TG904_CAU = stringTes.Substring(266, 4)
+        TG904_CAU_DES = stringTes.Substring(270, 30)
+        TG904_TRANS = stringTes.Substring(300, 10)
+        TG904_DESOP = stringTes.Substring(310, 30)
+        TG904_EDI_MITT1 = stringTes.Substring(340, 35)
+        Tg904_EDI_MITT2 = stringTes.Substring(375, 4)
+        TG904_EDI_DEST1 = stringTes.Substring(379, 35)
+        TG904_EDI_DEST2 = stringTes.Substring(414, 4)
+        TG904_FHH = stringTes.Substring(418, 4)
+        TG904_FHH_DES = stringTes.Substring(422, 30)
+        TG904_FHH_TMI_HH = stringTes.Substring(452, 2)
+        Tg904_FHH_TMI_MM = stringTes.Substring(454, 2)
+        TG904_FHH_TMF_HH = stringTes.Substring(456, 2)
+        TG904_FHH_TMF_MM = stringTes.Substring(458, 2)
+        Tg904_MTO_IND = stringTes.Substring(460, 50)
+        TG904_FAX_NUM = stringTes.Substring(510, 20)
+        TG904_NOME_BUYER = stringTes.Substring(530, 30)
+        TG904_CGNM_BUYER = stringTes.Substring(560, 30)
+        Tg904_CELL_BUYER = stringTes.Substring(590, 20)
+        Tg904_EMAIL_BUYER = stringTes.Substring(610, 60)
+        Tg904_ID_CNT = stringTes.Substring(670, 20)
+        TG904_CPAG = stringTes.Substring(690, 4)
+        TG904_CPAG_DES = stringTes.Substring(694, 30)
+        TG904_NAS_CODFORN = stringTes.Substring(724, 35)
+        TG904_NAS_QCODFORN = stringTes.Substring(759, 4)
+        Tg904_TEEDIUM = stringTes.Substring(763, 1)
+        Tg904_TEMEA = stringTes.Substring(764, 1)
+        TG904_TEOM = stringTes.Substring(765, 1)
 
+        ''MessageBox.Show("TG904_NART_ORD_T " & TG904_NART_ORD_T)
 
 
     End Sub
