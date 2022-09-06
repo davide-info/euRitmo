@@ -784,8 +784,30 @@ Public Class Det
     End Sub
     Public Sub New(stringdet As String)
         MessageBox.Show("DET " & stringdet)
-    End Sub
+        TG904_SCHEMA = stringdet.Substring(3, 4)
+        TG904_NART_ORD_D = stringdet.Substring(7, 10)
+        TG904_NART_ORD_OM_D = stringdet.Substring(17, 10)
+        TG904_NART_CON_D = stringdet.Substring(27, 10)
+        TG904_NART_CON_OM_D = stringdet.Substring(37, 10)
+        TG904_CART_ORD_D = stringdet.Substring(47, 10)
+        TG904_CART_ORD_OM_D = stringdet.Substring(57, 10)
+        TG904_CART_CON_D = stringdet.Substring(67, 10)
+        TG904_CART_CON_OM_D = stringdet.Substring(77, 10)
+        TG904_PLT_ORD_D = stringdet.Substring(87, 8)
+        TG904_PLT_CON_D = stringdet.Substring(95, 8)
+        TG904_FORM_PLT_FORN = stringdet.Substring(103, 20)
+        TG904_CART_STRATO_FOR = stringdet.Substring(103, 4)
+        TG904_NUM_STRATO_FOR = stringdet.Substring(107, 4)
+        TG904_QTA_FORN_FOR = stringdet.Substring(111, 4)
+        TG904_QTA_TERMO_FOR = stringdet.Substring(115, 4)
+        TG904_NOTE_ORD_D = stringdet.Substring(123, 80)
+        TG904_PNT_CAR = stringdet.Substring(203, 8)
+        TG904_STATO_RIG = stringdet.Substring(211, 1)
 
+    End Sub
+    Friend TG904_CART_ORD_D As String
+    Friend TG904_QTA_FORN_FOR As String
+    Friend TG904_PLT_ORD_D As String
     Friend TG904_SCHEMA As String
     Friend TG904_NART_ORD_D As String
     Friend TG904_NART_ORD_OM_D As String
