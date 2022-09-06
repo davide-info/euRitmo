@@ -80,7 +80,7 @@ Public Class Form1
         If (line.StartsWith("CO6")) Then
             cols.Add(New Col(line))
         End If
-        tg904.setCols(cols)
+        tg904.cols = cols
 
         If (line.StartsWith("DET")) Then
             tg904.setDtope(New Dtope(line))
