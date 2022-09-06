@@ -724,8 +724,33 @@ Public Class Mit
     End Sub
     Public Sub New(stringmit As String)
         MessageBox.Show("MIT " & stringmit)
+        TG904_SIGLA = stringmit.Substring(3, 2)
+        TG904_DES_MAG = stringmit.Substring(5, 30)
+        TG904_IND_MAG = stringmit.Substring(35, 30)
+        TG904_LOC_MAG = stringmit.Substring(65, 20)
+        TG904_CODFG070 = stringmit.Substring(85, 6)
+        TG904_RAGSOC_CLI = stringmit.Substring(91, 50)
+        TG904_RAGSOC_E_CLI = stringmit.Substring(141, 40)
+        TG904_BANCA_CLI = stringmit.Substring(181, 35)
+        TG904_TELEFONO_CLI = stringmit.Substring(216, 15)
+        TG904_TELEX_CLI = stringmit.Substring(231, 10)
+        TG904_FAX_CLI = stringmit.Substring(241, 10)
+        TG904_IND_CLI = stringmit.Substring(251, 50)
+        TG904_CAP_CLI = stringmit.Substring(301, 5)
+        TG904_LOC_CLI = stringmit.Substring(306, 50)
+        TG904_PROV_CLI = stringmit.Substring(356, 3)
+        TG904_CODFISC_CLI = stringmit.Substring(359, 16)
+        TG904_PARTIVA_CLI = stringmit.Substring(375, 11)
+        TG904_TELEX_CLI1 = stringmit.Substring(386, 15)
+        TG904_FAX_CLI1 = stringmit.Substring(401, 15)
+        TG904_TEL_MAG = stringmit.Substring(416, 15)
+        TG904_TELEX_MAG = stringmit.Substring(431, 15)
+        TG904_FAX_MAG = stringmit.Substring(446, 15)
+
+        MessageBox.Show("Telefono CLI " & TG904_TELEFONO_CLI)
     End Sub
     Friend TG904_SIGLA As String
+    Friend TG904_LOC_CLI As String
     Friend TG904_DES_MAG As String
     Friend TG904_IND_MAG As String
     Friend TG904_LOC_MAG As String
