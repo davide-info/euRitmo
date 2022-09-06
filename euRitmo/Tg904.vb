@@ -876,7 +876,7 @@ Public Class Pro
         TG904_UM = proStr.Substring(206, 2)
         TG904_CODIVA = proStr.Substring(208, 3)
         TG904_ALIQ = proStr.Substring(211, 4)
-        TG904_CODF_TV = proStr.Substring(215, 200)
+        TG904_CODF_TV = proStr.Substring(215, 200) 'Arrivato riga 288 file tg904.txt'
 
 
     End Sub
