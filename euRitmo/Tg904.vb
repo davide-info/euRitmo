@@ -20,6 +20,10 @@ Public Class Tg904
     Friend cols As List(Of Col)
     Friend mit As Mit
     Friend endtr As EndTr
+    Friend ppi As PPI
+    Friend xna As Xna
+
+
     Public Sub setend(endtr As EndTr)
         Me.endtr = endtr
 
