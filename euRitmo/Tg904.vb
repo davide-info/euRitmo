@@ -974,6 +974,9 @@ Public Class Col
     End Sub
     Public Sub New(colStr As String)
         MessageBox.Show("COL " & colStr)
+        TG904_COS = colStr.Substring(3, 12)
+        TG904_COSV = colStr.Substring(3, 12)
+        TG904_STRINGA = colStr.Substring(15, 136)
     End Sub
     Friend TG904_COS As String
     Friend TG904_COSV As String
