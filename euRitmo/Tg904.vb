@@ -877,10 +877,32 @@ Public Class Pro
         TG904_CODIVA = proStr.Substring(208, 3)
         TG904_ALIQ = proStr.Substring(211, 4)
         TG904_CODF_TV = proStr.Substring(215, 200) 'Arrivato riga 288 file tg904.txt'
-
+        TG904_CODF_E = proStr.Substring(215, 200)
+        TG904_CODF = proStr.Substring(215, 20) 'Devo inserire questo campo?'
+        TG904_PG_LIST = proStr.Substring(415, 4)
+        TG904_RG_LIST = proStr.Substring(419, 2)
+        TG904_P_BUYER = proStr.Substring(421, 4)
+        TG904_P_DES_BUYER = proStr.Substring(425, 8)
+        TG904_BCODE_IMB = proStr.Substring(433, 14)
+        TG904_QTA_BCODE_IMB = proStr.Substring(447, 4)
+        TG904_DTSCAD1 = proStr.Substring(451, 8)
+        TG904_DTSCAD2 = proStr.Substring(459, 8)
+        TG904_ART62 = proStr.Substring(467, 1)
+        TG904_RE5 = proStr.Substring(468, 10)
+        TG904_LNF = proStr.Substring(478, 2)
+        TG904_BCODA = proStr.Substring(480, 30)
+        TG904_DTINS_BCODE = proStr.Substring(510, 8)
+        TG904_DTINS_BCODE_IMB = proStr.Substring(518, 8)
+        TG904_DTINS_BCODA = proStr.Substring(526, 8)
+        TG904_GR1 = proStr.Substring(534, 2)
+        TG904_GR2 = proStr.Substring(536, 2)
+        TG904_GR3 = proStr.Substring(538, 2)
+        TG904_GR4 = proStr.Substring(540, 2)
+        TG904_GR5 = proStr.Substring(542, 2)
 
     End Sub
     Friend TG904_CODPRO As String
+    Friend TG904_RG_LIST As String
     Friend TG904_NUM_STRATO_MAG As String
     Friend TG904_DES_PRO As String
     Friend TG904_BCODE As String
