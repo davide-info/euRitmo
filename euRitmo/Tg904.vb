@@ -968,6 +968,21 @@ Public Class Pro
     Friend TG904_GR5 As String
 
 End Class
+Public Class Xna
+    Friend TG904_XVAL As String
+
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(stringXna As String)
+        MessageBox.Show("XNA " & stringXna)
+        TG904_XVAL = stringXna.Substring(4, 16)
+    End Sub
+
+
+
+End Class
 
 Public Class Col
     Public Sub New()
@@ -989,6 +1004,8 @@ Public Class EndTr
     End Sub
     Public Sub New(endStr)
         MessageBox.Show("ENDTR " & endStr)
+        TG904_NRK = endStr.substring(4, 6)
+
     End Sub
     Friend TG904_NRK As String
 End Class
@@ -1015,6 +1032,7 @@ Class PPI
 
     End Sub
 End Class
+
 
 
 

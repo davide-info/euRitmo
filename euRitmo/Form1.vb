@@ -33,7 +33,7 @@ Public Class Form1
             Dim tes As New Tes(line)
             tg904.setTes(tes)
         End If
-        If (line.startsWith("FOR")) Then
+        If (line.StartsWith("FOR")) Then
             Dim forn As New Forn(line)
             tg904.setForn(forn)
 
@@ -41,7 +41,7 @@ Public Class Form1
         If (line.StartsWith("RUB")) Then
             Dim rub As New Rub(line)
 
-            tg904.setrub(rub)
+            tg904.setRub(rub)
 
 
 
@@ -129,38 +129,12 @@ Public Class Form1
             Dim tg904 = testParseFile(OpenFileDialog1.FileName)
             ''TextBox1.AppendText(str)
 
-            Dim str = tg904.ToString()
+            Dim str = tg904.Tostring()
 
-            MessageBox.Show(Str)
+            MessageBox.Show(str)
 
 
         End If
 
     End Sub
-End Class
-Public Class Ppp1
-    Private TG904_PP_IMP As String()
-    Private TG904_PP_IMPV As String()
-    Private TG904_PP_IVA As String()
-    Private TG904_PP_IVAV As String()
-    Private TG904_PP_ALIQ As String()
-    Private TG904_PP_CODIVA As String()
-    Public Sub New()
-
-    End Sub
-    Public Sub New(pp1Str As String)
-        MessageBox.Show("PP1 " & pp1Str)
-    End Sub
-End Class
-Public Class Xna
-    Private TG904_XVAL As String()
-    Public Sub New()
-
-    End Sub
-    Public Sub New(stringXna As String)
-        MessageBox.Show("XNA " & stringXna)
-    End Sub
-
-
-
 End Class
