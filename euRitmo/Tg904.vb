@@ -517,6 +517,7 @@ Public Class Forn
 
     End Sub
 
+
     Friend TG904_RAGSOC_For As String
     Friend TG904_RAPP_TEL As String
     Public Sub setTG904_RAGSOC_For(TG904_RAGSOC_For As String)
@@ -992,7 +993,28 @@ Public Class EndTr
     Friend TG904_NRK As String
 End Class
 
+Class PPI
+    Friend TG904_PP_IMP As String
+    Friend TG904_PP_IMPV As String
+    Friend TG904_PP_IVA As String
+    Friend TG904_PP_IVAV As String
+    Friend TG904_PP_ALIQ As String
+    Friend TG904_PP_CODIVA As String
+    Public Sub New()
 
+    End Sub
+    Public Sub New(pptstr As String)
+        TG904_PP_IMP = pptstr.Substring(3, 14)
+        TG904_PP_IMPV = pptstr.Substring(3, 14)
+        TG904_PP_IVA = pptstr.Substring(17, 14)
+        TG904_PP_IVAV = pptstr.Substring(17, 14) 'Devo aggiungere questo Campo?' 
+        TG904_PP_ALIQ = pptstr.Substring(31, 4)
+        TG904_PP_CODIVA = pptstr.Substring(35, 3)
+
+
+
+    End Sub
+End Class
 
 
 
