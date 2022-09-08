@@ -30,6 +30,7 @@
     Friend ftl As Ftl
     Friend loc As Loc
     Friend dtl As Dtl
+    Friend cnt As Cnt
 End Class
 
 Public Enum TipoDoc
@@ -369,4 +370,10 @@ Public Class Dtl
     Friend QTACONS As Integer?
 
 
+End Class
+Public Class Cnt
+    Friend TIPOREC As String
+    Friend QTAORDT As Integer?
+    Friend UDMQORDT As String
+    Friend NUMLIT As String
 End Class
