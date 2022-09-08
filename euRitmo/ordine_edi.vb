@@ -29,6 +29,7 @@
     Friend ald As Ald
     Friend ftl As Ftl
     Friend loc As Loc
+    Friend dtl As Dtl
 End Class
 
 Public Enum TipoDoc
@@ -356,4 +357,16 @@ Public Class Loc
     Friend NAZIOD As String
     Friend QTASPLIt As String
     Friend UDMQORD As String
+End Class
+Public Class Dtl
+    Friend TIPOREC As String
+    Friend DATRCONS As Integer?
+    Friend ORARCONS As Integer?
+    Friend TIPODATARC As String
+    Friend DATRCON2 As Integer?
+    Friend ORARCON2 As Integer?
+    Friend TIPODATATR2 As Integer?
+    Friend QTACONS As Integer?
+
+
 End Class
