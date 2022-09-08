@@ -16,6 +16,8 @@
     Friend nad As Nad
     Friend nai As Nai
     Friend nac As Nac
+    Friend nam As Nam
+    Friend dtm As Dtm
 
 End Class
 
@@ -186,8 +188,24 @@ Public Enum TipoCodiceMagazzino
 
 End Enum
 
+Public Class Dtm
+    Friend TIPOREC As String
+    Friend DATACONS As Integer
+    Friend ORACONS As Integer
+    Friend TIPODATAc As tipoDataConsegna
+    Friend DATACON2 As Integer
+    Friend ORACON2 As Integer
+    Friend TIPODATA2 As String
 
+End Class
 
+Public Enum tipoDataConsegna
+    DataRichiesta = 2
+    NonConsegnarePrima = 3
+    DataTassativa = 69
+    DataPrevista = 76
+
+End Enum
 
 
 
