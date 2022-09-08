@@ -160,8 +160,31 @@ Public Enum TipoCodiceMerce
 
 End Enum
 
+Public Class Nam
+    Friend TIPOREC As String
+    Friend CODMAGP As String
+    Friend QCODMAGP As TipoCodiceMagazzino
+    Friend CITTAM As String
+    Friend PROVM As String
+    Friend CAPM As String
+    Friend NAZIOM As String
+    Public Sub New()
 
 
+    End Sub
+
+
+
+End Class
+
+Public Enum TipoCodiceMagazzino
+    Ean = 14
+    VA
+    CodiceVenditore = 91
+    CodiceCompratore = 92
+    ZZ
+
+End Enum
 
 
 
