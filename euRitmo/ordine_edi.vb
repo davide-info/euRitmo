@@ -59,18 +59,6 @@ Public Enum TipoDoc
 
 
 End Enum
-
-Public Class Doc
-    Friend TIPO_DOC As TipoDoc
-    Friend NUMDOC As String
-    Friend DATADOC As Integer
-    Friend ORADOC As Integer
-    Friend CodAzION As Codazion
-    Friend flagime As tipoOrd
-    Friend NOMEDOC As String
-
-
-End Class
 Public Enum Codazion
     A
     M
@@ -90,7 +78,6 @@ Public Class RFF
     Friend NUMORDF As String
     Friend DATAORDF As Integer
     Friend ORAORDF As Integer
-    '
     Friend NUMORDC As String
     Friend DATAORDC As Integer
     Friend ORAORDC As Integer
@@ -392,5 +379,5 @@ Public Class Cnt
     Friend TIPOREC As String
     Friend QTAORDT As Integer?
     Friend UDMQORDT As String
-    Friend NUMLIT As String
+    Friend NUMLINT As String
 End Class
