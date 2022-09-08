@@ -305,5 +305,12 @@ Public Class Pac
     Friend RESPAGIMBREST As String
 End Class
 Public Class Mei
-
+    Friend TIPOREC As String
+    Friend QUALMISURA As String
+    Friend IDDEMENCOD As String
+    Friend SIGNIMISCOD As String
+    Friend QUALUNIMIS As String
+    Friend VALOMIMISURA As String
+    Friend RANGEMIN As String
+    Friend RANGEMAS As String
 End Class
