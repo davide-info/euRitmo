@@ -28,6 +28,7 @@
     Friend dtr As Dtr
     Friend ald As Ald
     Friend ftl As Ftl
+    Friend loc As Loc
 End Class
 
 Public Enum TipoDoc
@@ -339,7 +340,20 @@ Public Class Ald
     Friend FLGPRZUN As String
 End Class
 Public Class Ftl
-
     Friend TIPOREC As String
     Friend NOTE As String
+End Class
+
+Public Class Loc
+    Friend TIPOREC As String
+    Friend CODCONS As String
+    Friend QCODCONS As String
+    Friend RAGSOCD As String
+    Friend INDIRD As String
+    Friend CITTAD As String
+    Friend PROVD As String
+    Friend CAPD As String
+    Friend NAZIOD As String
+    Friend QTASPLIt As String
+    Friend UDMQORD As String
 End Class
