@@ -23,7 +23,6 @@ Public Class Tg904
     Friend ppi As PPI
     Friend xna As Xna
 
-
     Public Sub setend(endtr As EndTr)
         Me.endtr = endtr
 

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DesignTimeBuild",
+    "\\euRitmo",
+    "\\euRitmo\\My Project"
   ],
-  "SelectedNode": "\\euRitmo.sln",
   "PreviewInSolutionExplorer": false
 }
