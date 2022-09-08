@@ -19,6 +19,7 @@
     Friend nam As Nam
     Friend dtm As Dtm
     Friend ftx As Ftx
+    Friend pat As Pat
 End Class
 
 Public Enum TipoDoc
@@ -212,6 +213,32 @@ Public Class Ftx
     Friend DIVISA As String
     Friend NOTE As String
 End Class
+Public Class Pat
+    Friend TIPOREC As String
+    Friend TIPOCOND As String
+    Friend RIFERMP As String
+    Friend RELTERMP As String
+    Friend UNTEMP As String
+    Friend NUMTEMP As Integer
+    Friend IMPORTO As String
+    Friend DIVISA As String
+    Friend PERC As String
+    Friend DESCRIZ As String
+    Friend BANCACOD As String
+    Friend BANCADESC As String
+    Friend FACTOR As String
+    Friend COPAG As String
+    Friend MEZZOPAG As String
+End Class
 
 
 
+Public Enum TipoCondizionePagamento
+    TerminiPenalita = 20
+    PagamentoARate = 21
+    Sconti = 22
+    PagamentoCompleto = 10
+
+
+
+End Enum
