@@ -138,7 +138,7 @@ End Class
 Public Class Nai
     Friend TIPOREC As String
     Friend CODFATT As String
-    Friend QCODFATT As TipoFattura
+    Friend QCODFATT As String
     Friend RAGSOCI As String
     Friend INDIRi As String
     Friend CITTAI As String
@@ -153,18 +153,18 @@ End Class
 
 
 
-Public Enum TipoFattura
-    Cod = 14
-    VA
-    CodVenditore = 91
-    CodCompratore = 92
-    ZZ
-End Enum
+'Public Enum TipoFattura
+'    Cod = 14
+'    VA
+'    CodVenditore = 91
+'    CodCompratore = 92
+'    ZZ
+'End Enum
 
 Public Class Nac
     Friend TIPOREC As String
     Friend CODMAGI As String
-    Friend QCODMAGI As TipoCodiceMerce
+    Friend QCODMAGI As String
     Friend RAGSOCC As String
     Friend INDIRC As String
     Friend CITTAC As String
@@ -173,10 +173,10 @@ Public Class Nac
     Friend NAZIOC As String
 End Class
 
-Public Enum TipoCodiceMerce
-    Ean = 14
+'Public Enum TipoCodiceMerce
+'    Ean = 14
 
-End Enum
+'End Enum
 
 Public Class Nam
     Friend TIPOREC As String
