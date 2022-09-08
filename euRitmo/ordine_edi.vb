@@ -14,8 +14,8 @@
     Friend cta As Cta
     Friend nab As NAB
     Friend nad As Nad
-
-
+    Friend nai As Nai
+    Friend nac As Nac
 
 End Class
 
@@ -117,9 +117,35 @@ Public Class Nad
     Friend NAZIOD As String
 End Class
 
+Public Class Nai
+    Friend TIPOREC As String
+    Friend CODFATT As String
+    Friend QCODFATT As TipoFattura
+    Friend RAGSOCI As String
+    Friend INDIRi As String
+    Friend CITTAI As String
+    Friend PROVI As String
+    Friend CAPI As String
+    Friend NAZOI As String
+
+End Class
 
 
 
+
+
+
+Public Enum TipoFattura
+    Cod = 14
+    VA
+    CodVenditore = 91
+    CodCompratore = 92
+    ZZ
+End Enum
+
+Public Class Nac
+
+End Class
 
 
 
