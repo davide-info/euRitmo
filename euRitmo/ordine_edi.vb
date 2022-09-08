@@ -144,10 +144,21 @@ Public Enum TipoFattura
 End Enum
 
 Public Class Nac
-
+    Friend TIPOREC As String
+    Friend CODMAGI As String
+    Friend QCODMAGI As TipoCodiceMerce
+    Friend RAGSOCC As String
+    Friend INDIRC As String
+    Friend CITTAC As String
+    Friend PROVC As String
+    Friend CAPC As String
+    Friend NAZIOC As String
 End Class
 
+Public Enum TipoCodiceMerce
+    Ean = 14
 
+End Enum
 
 
 
