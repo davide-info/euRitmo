@@ -50,28 +50,21 @@ Public Class Bgm
     Friend TIPOORD As String
 End Class
 
-Public Enum TipoDoc
-    ORDCHG
-    ORDERS
-    ORDPRP
-    ORDSRP
-    ORDSLS
+'Public Enum TipoDoc
+'    ORDCHG
+'    ORDERS
+'    ORDPRP
+'    ORDSRP
+'    ORDSLS
 
 
-End Enum
-Public Enum Codazion
-    A
-    M
-    R
-End Enum
-Public Enum tipoOrd
-    BlanketOrder = 221
-    DispositivoUrgente = 224
-    DispositivoConsegna = 226
-    ConfermaOrdine = 231
-    YA9
+'End Enum
+'Public Enum Codazion
+'    A
+'    M
+'    R
+'End Enum
 
-End Enum
 Public Class RFF
     Friend TIPOREC As String
     Friend FORDPROM As String
