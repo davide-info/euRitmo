@@ -22,6 +22,7 @@
     Friend pat As Pat
     Friend tod As Tod
     Friend lin As lin
+    Friend mea As MEA
 End Class
 
 Public Enum TipoDoc
@@ -277,5 +278,16 @@ Public Class lin
     Friend TIPOPRZ2 As String
     Friend UDMPRUNZ2 As String
     Friend PRZBASE As String
+
+End Class
+Public Class MEA
+    Friend TIPOREC As String
+    Friend QUALMISURA As String
+    Friend IDDICOMMNCOD As String
+    Friend SIGNIMISCOD As String
+    Friend QUALUNIMIS As String
+    Friend VALOMISURA As String
+    Friend RANGEMIN As String
+    Friend RANGEMAS As String
 
 End Class
