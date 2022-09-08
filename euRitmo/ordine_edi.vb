@@ -26,6 +26,8 @@
     Friend pac As Pac
     Friend mei As Mei
     Friend dtr As Dtr
+    Friend ald As Ald
+    Friend ftl As Ftl
 End Class
 
 Public Enum TipoDoc
@@ -325,4 +327,19 @@ Public Class Dtr
     Friend TIPODATTR2 As String
     Friend QTACONS As String
 
+End Class
+Public Class Ald
+    Friend TIPOREC As String
+    Friend INSCADD As String
+    Friend DESCR As String
+    Friend INDSEQ As Integer
+    Friend TIPOSCADD As String
+    Friend IMPORTO As String
+    Friend PERC As String
+    Friend FLGPRZUN As String
+End Class
+Public Class Ftl
+
+    Friend TIPOREC As String
+    Friend NOTE As String
 End Class
