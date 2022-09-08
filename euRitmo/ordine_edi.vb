@@ -25,6 +25,7 @@
     Friend mea As MEA
     Friend pac As Pac
     Friend mei As Mei
+    Friend dtr As Dtr
 End Class
 
 Public Enum TipoDoc
@@ -313,4 +314,15 @@ Public Class Mei
     Friend VALOMIMISURA As String
     Friend RANGEMIN As String
     Friend RANGEMAS As String
+End Class
+Public Class Dtr
+    Friend TIPOREC As String
+    Friend DATRCONS As Integer
+    Friend ORARCONS As Integer
+    Friend TIPODATRC As String
+    Friend DATRCON2 As Integer
+    Friend ORARCON2 As Integer
+    Friend TIPODATTR2 As String
+    Friend QTACONS As String
+
 End Class
