@@ -21,6 +21,7 @@
     Friend ftx As Ftx
     Friend pat As Pat
     Friend tod As Tod
+    Friend lin As lin
 End Class
 
 Public Enum TipoDoc
@@ -251,5 +252,30 @@ Public Class Tod
     Friend CODCOND As String
     Friend DESCOND1 As String
     Friend DESCOND2 As String
+
+End Class
+Public Class lin
+    Friend TIPOREC As String
+    Friend NUMRIGA As Integer
+    Friend CODICEANCU As String
+    Friend TIPOCODCU As String
+    Friend CODEANTU As String
+    Friend CODFORTU As String
+    Friend CODDISTU As String
+    Friend DESART As String
+    Friend FLINPROM As String
+    Friend QTAORD As String
+    Friend UDMQTAORD As String
+    Friend PRZUNI As String
+    Friend TIPOPRZ As String
+    Friend UDMPRZUN As String
+    Friend NRCUINTU As String
+    Friend CODAZIOL As String
+    Friend QTACONF As String
+    Friend UDMQCONF As String
+    Friend PRZUN2 As String
+    Friend TIPOPRZ2 As String
+    Friend UDMPRUNZ2 As String
+    Friend PRZBASE As String
 
 End Class
