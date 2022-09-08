@@ -18,7 +18,7 @@
     Friend nac As Nac
     Friend nam As Nam
     Friend dtm As Dtm
-
+    Friend ftx As Ftx
 End Class
 
 Public Enum TipoDoc
@@ -207,7 +207,11 @@ Public Enum tipoDataConsegna
 
 End Enum
 
-
+Public Class Ftx
+    Friend TIPOREC As String
+    Friend DIVISA As String
+    Friend NOTE As String
+End Class
 
 
 
