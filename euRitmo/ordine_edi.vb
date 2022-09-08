@@ -20,6 +20,7 @@
     Friend dtm As Dtm
     Friend ftx As Ftx
     Friend pat As Pat
+    Friend tod As Tod
 End Class
 
 Public Enum TipoDoc
@@ -242,3 +243,13 @@ Public Enum TipoCondizionePagamento
 
 
 End Enum
+
+Public Class Tod
+    Friend TIPOREC As String
+    Friend CODCONS As String
+    Friend CODCONST As String
+    Friend CODCOND As String
+    Friend DESCOND1 As String
+    Friend DESCOND2 As String
+
+End Class
