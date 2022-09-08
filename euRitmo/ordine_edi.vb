@@ -1,13 +1,5 @@
 ﻿Public Class ordine_edi
-    Friend ID_EDI_MITT As String
-    Friend ID_EDI_MITT1 As String
-    Friend ID_EDI_MITT2 As String
-    Friend ID_EDI_MITT3 As String
-    Friend IED_EDI_DEST As String
-    Friend ID_EDI_DEST1 As String
-    Friend ID_EDI_DEST2 As String
-    Friend ID_EDI_DEST3 As String
-    Friend Doc As Doc
+    Friend bgm As Bgm
     Friend Rff As RFF
     Friend RFC As RFC
     Friend nas As NAS
@@ -31,6 +23,31 @@
     Friend loc As Loc
     Friend dtl As Dtl
     Friend cnt As Cnt
+End Class
+
+Public Class Bgm
+    Friend ID_EDI_MITT As String
+    Friend ID_EDI_MITT1 As String
+    Friend ID_EDI_MITT2 As String
+    Friend ID_EDI_MITT3 As String
+    Friend IED_EDI_DEST As String
+    Friend ID_EDI_DEST1 As String
+    Friend ID_EDI_DEST2 As String
+    Friend ID_EDI_DEST3 As String
+    Friend TIPODOC As String
+    Friend NUMDOC As String
+    Friend FORDPROM As String
+    Friend NUMORDF As String
+    Friend DATAORDF As Integer
+    Friend ORAORDF As Integer
+    Friend NUMORDC As String
+    Friend DATAORDC As Integer
+    Friend ORAORDC As Integer
+    Friend NUMPROFDF As Integer
+    Friend numpordc As Integer
+    Friend Codazion As String
+    Friend FLAGIMPE As String
+    Friend TIPOORD As String
 End Class
 
 Public Enum TipoDoc
