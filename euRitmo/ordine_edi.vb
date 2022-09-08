@@ -23,6 +23,8 @@
     Friend tod As Tod
     Friend lin As lin
     Friend mea As MEA
+    Friend pac As Pac
+    Friend mei As Mei
 End Class
 
 Public Enum TipoDoc
@@ -289,5 +291,19 @@ Public Class MEA
     Friend VALOMISURA As String
     Friend RANGEMIN As String
     Friend RANGEMAS As String
+
+End Class
+Public Class Pac
+    Friend TIPOREC As String
+    Friend NUMRIGA As Integer
+    Friend CODART As String
+    Friend TIPCODART As String
+    Friend UDMQUIMB As String
+    Friend INFIBACOD As String
+    Friend CONIMBCOD As String
+    Friend IDETIPIMB As String
+    Friend RESPAGIMBREST As String
+End Class
+Public Class Mei
 
 End Class
