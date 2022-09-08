@@ -107,6 +107,14 @@ End Class
 
 Public Class Nad
     Friend TIPOREC As String
+    Friend CODCONS As String
+    Friend QCODCONS As String
+    Friend RAGSOCD As String
+    Friend INDIRD As String
+    Friend CITTAD As String
+    Friend PROVD As String
+    Friend CAPD As String
+    Friend NAZIOD As String
 End Class
 
 
