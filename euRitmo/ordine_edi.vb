@@ -181,7 +181,7 @@ End Enum
 Public Class Nam
     Friend TIPOREC As String
     Friend CODMAGP As String
-    Friend QCODMAGP As TipoCodiceMagazzino
+    Friend QCODMAGP As String
     Friend CITTAM As String
     Friend PROVM As String
     Friend CAPM As String
@@ -195,33 +195,33 @@ Public Class Nam
 
 End Class
 
-Public Enum TipoCodiceMagazzino
-    Ean = 14
-    VA
-    CodiceVenditore = 91
-    CodiceCompratore = 92
-    ZZ
+'Public Enum TipoCodiceMagazzino
+'    Ean = 14
+'    VA
+'    CodiceVenditore = 91
+'    CodiceCompratore = 92
+'    ZZ
 
-End Enum
+'End Enum
 
 Public Class Dtm
     Friend TIPOREC As String
     Friend DATACONS As Integer
     Friend ORACONS As Integer
-    Friend TIPODATAc As tipoDataConsegna
+    Friend TIPODATAc As String
     Friend DATACON2 As Integer
     Friend ORACON2 As Integer
     Friend TIPODATA2 As String
 
 End Class
 
-Public Enum tipoDataConsegna
-    DataRichiesta = 2
-    NonConsegnarePrima = 3
-    DataTassativa = 69
-    DataPrevista = 76
+'Public Enum tipoDataConsegna
+'    DataRichiesta = 2
+'    NonConsegnarePrima = 3
+'    DataTassativa = 69
+'    DataPrevista = 76
 
-End Enum
+'End Enum
 
 Public Class Ftx
     Friend TIPOREC As String
@@ -248,15 +248,15 @@ End Class
 
 
 
-Public Enum TipoCondizionePagamento
-    TerminiPenalita = 20
-    PagamentoARate = 21
-    Sconti = 22
-    PagamentoCompleto = 10
+'Public Enum TipoCondizionePagamento
+'    TerminiPenalita = 20
+'    PagamentoARate = 21
+'    Sconti = 22
+'    PagamentoCompleto = 10
 
 
 
-End Enum
+'End Enum
 
 Public Class Tod
     Friend TIPOREC As String
@@ -379,5 +379,5 @@ Public Class Cnt
     Friend TIPOREC As String
     Friend QTAORDT As Integer?
     Friend UDMQORDT As String
-    Friend NUMLINT As String
+    Friend NUMLIT As String
 End Class
