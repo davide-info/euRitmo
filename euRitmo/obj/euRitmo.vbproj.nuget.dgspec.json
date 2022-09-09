@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\win\\source\\repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj": {}
+    "C:\\Users\\win\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\win\\source\\repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj": {
+    "C:\\Users\\win\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\win\\source\\repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj",
+        "projectUniqueName": "C:\\Users\\win\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj",
         "projectName": "euRitmo",
-        "projectPath": "C:\\Users\\win\\source\\repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj",
+        "projectPath": "C:\\Users\\win\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\euRitmo.vbproj",
         "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\win\\source\\repos\\davide-info\\euRitmo\\euRitmo\\obj\\",
+        "outputPath": "C:\\Users\\win\\Source\\Repos\\davide-info\\euRitmo\\euRitmo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\win\\AppData\\Roaming\\NuGet\\NuGet.Config",

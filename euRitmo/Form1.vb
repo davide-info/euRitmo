@@ -31,28 +31,32 @@ Public Class Form1
             ''MessageBox.Show("QUI " & line.Substring(0, 3))
 
             Dim tes As New Tes(line)
-            tg904.setTes(tes)
+            tg904.Tes = tes
         End If
         If (line.StartsWith("FOR")) Then
             Dim forn As New Forn(line)
-            tg904.setForn(forn)
+            tg904.forn = forn
+
+
 
         End If
         If (line.StartsWith("RUB")) Then
             Dim rub As New Rub(line)
 
-            tg904.setRub(rub)
+            tg904.rub = rub
+
 
 
 
         End If
         If (line.StartsWith("MIT")) Then
             Dim mit As New Mit(line)
-            tg904.setmit(mit)
+            tg904.mit = mit
+
         End If
         If (line.StartsWith("PRO")) Then
             Dim pro As New Pro(line)
-            tg904.setpro(pro)
+            tg904.Pro = pro
         End If
         Dim cols As New List(Of Col)
 
@@ -83,14 +87,15 @@ Public Class Form1
         tg904.cols = cols
 
         If (line.StartsWith("DET")) Then
-            tg904.setDtope(New Dtope(line))
+            tg904.Dtope = New Dtope(line)
+
 
 
 
 
         End If
         If (line.StartsWith("END")) Then
-            tg904.setend(New EndTr(line))
+            tg904.endtr = New EndTr(line)
 
         End If
 
