@@ -22,10 +22,11 @@ Public Class Tg904
     Friend DetList As New List(Of BloccoDet)
 
     Friend endtr As EndTr
-<<<<<<< HEAD
-    Friend ppi As PPI
-    Friend xna As Xna
-    ''<<<<<<< HEAD
+    '''<<<<<<< HEAD
+    Friend ppi As PPI_PPT
+    Friend xna As Xna_Xft
+
+    '''<<<<<<< HEAD
 
     Public Sub setend(endtr As EndTr)
         Me.endtr = endtr
@@ -38,18 +39,15 @@ Public Class Tg904
         Return endtr
 
     End Function
-    '=======
-    '>>>>>>> e3eefa14e6e2d88858aab2e848dc64e6c997fa00
-=======
-    '' Friend pro As Pro
 
 
-    Friend ppi As PPI_PPT
+
+    ''Friend ppi As PPI_PPT
     Friend ppt As PPI_PPT
 
-    Friend xna As Xna_Xft
+    ' Friend xna As Xna_Xft
     Friend xft As Xna_Xft
->>>>>>> d03c639c3d3074ab1b01de981a46557f63f3ba5a
+
     Public Overrides Function Tostring() As String
         Dim str = ""
 

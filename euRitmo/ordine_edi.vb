@@ -1,9 +1,11 @@
-﻿Public Class ordine_edi
+﻿Imports System.Text
+
+Public Class ordine_edi
     Friend bgm As Bgm
     Friend Rff As RFF
     Friend RFC As RFC
     Friend nas As NAS
-    Friend cta As Cta
+    Friend cta As CTA
     Friend nab As NAB
     Friend nad As Nad
     Friend nai As Nai
@@ -194,6 +196,14 @@ Public Class Nam
 
 
     End Sub
+    Public Overrides Function ToString() As String
+        Dim builder As New StringBuilder()
+        builder.Append(Me.TIPOREC)
+
+
+        Return builder.ToString()
+
+    End Function
 
 
 
