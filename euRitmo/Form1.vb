@@ -68,6 +68,7 @@ Public Class Form1
 
         For i As Integer = 0 To tg904.DetList.Count - 1
             Dim curPro = tg904.DetList(i).pro
+            lin = New lin()
             lin.DESART = curPro.DES_PRO.PadRight(35)
             lin.UDMQTAORD = curPro.UM.PadRight(3)
             lin.CODEANTU = curPro.BCODE.PadRight(35)
@@ -80,6 +81,7 @@ Public Class Form1
             Dim curDet = tg904.DetList(i).det
             lin.QTAORD = curDet.CART_ORD_D.Replace("+", "").Replace("-", "") & "0".PadLeft(15, "0")
             lin.UDMQTAORD = "TU".PadRight(3)
+            lin.NUMRIGA = Convert.ToString(i).PadLeft(3, "0")
 
 
 
@@ -148,8 +150,12 @@ Public Class Form1
         result.nab = nab
         result.nad = nad
         result.nai = nai
+        result.nas = nas
         result.dtm = dtm
         result.ftx = ftx
+        result.ftl = ftl
+
+
 
 
 
@@ -159,15 +165,21 @@ Public Class Form1
         Return result
     End Function
     Private Sub writeToFile(ordine_edi As ordine_edi)
-        MessageBox.Show(Environment.CurrentDirectory)
+        ''MessageBox.Show(Environment.CurrentDirectory)
+        Const dirName = "C:\test"
+        If Not Directory.Exists(dirName) Then
+            Directory.CreateDirectory(dirName)
+        End If
 
 
         Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
 
 
+        Dim fileName = "test.txt"
+        Dim fullPathName = dirName & "\" & fileName
 
 
-        File.WriteAllText("C:\test\test.txt", values(0))
+        File.WriteAllText(fullPathName, ordine_edi.ToString())
 
 
 
