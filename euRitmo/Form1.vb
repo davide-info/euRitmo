@@ -69,6 +69,7 @@ Public Class Form1
         For i As Integer = 0 To tg904.DetList.Count - 1
             Dim curPro = tg904.DetList(i).pro
             lin = New lin()
+            lin.NUMRIGA = Convert.ToString(i).PadLeft(3)
             lin.DESART = curPro.DES_PRO.PadRight(35)
             lin.UDMQTAORD = curPro.UM.PadRight(3)
             lin.CODEANTU = curPro.BCODE.PadRight(35)
