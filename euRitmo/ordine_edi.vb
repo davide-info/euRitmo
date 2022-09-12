@@ -150,8 +150,16 @@ Public Class Bgm
         builder.Append(Me.NUMDOC)
         builder.Append(Me.NUMORDC)
         builder.Append(Me.NUMORDF)
-
-
+        builder.Append(DATAORDF)
+        builder.Append(ORAORDF)
+        builder.Append(NUMORDC)
+        builder.Append(DATAORDC)
+        builder.Append(ORAORDC)
+        builder.Append(NUMPROFDF)
+        builder.Append(numpordc)
+        builder.Append(Codazion)
+        builder.Append(FLAGIMPE)
+        builder.Append(TIPOORD)
 
 
 
