@@ -14,6 +14,8 @@ Public Class Form1
     End Function
 
     Private Shared Function MapToOrdineEdi(tg904 As Tg904) As ordine_edi
+        Dim strB = New StringBuilder()
+
         Dim bgm As New Bgm()
         Dim nai As New Nai()
         Dim nas As New NAS()
@@ -25,17 +27,30 @@ Public Class Form1
         Dim ftl As New Ftl()
         Dim cnt As New Cnt()
         Dim ftx As New Ftx()
-
+        'Oggetto Nab manca il campo RAGSOCB'
+        'Oggetto Lin Manca il campo CODEANCU , COFORTU, DESART, QTAORD, PRZUNI, TIPOPRZ, '
 
         bgm.DATADOC = tg904.Tes.DTORD
         bgm.TIPODOC = "ORDERS"
-        bgm.NUMDOC = tg904.Tes.ORD.PadRight(35)
-        tg904.Tes.ORD = bgm.NUMDOC
+        ''bgm.
+        ''bgm.NUMDOCs = New Bgm.NumdoC(2)
+        bgm.NUMDOC1 = tg904.Tes.ORD.PadRight(35)
+        bgm.numdoc2 = tg904.Tes.ORD.PadRight(35)
+        ''  bgm.NUMDOCs(1) = Tg904.Tes.ORD.PadRight(35)
         bgm.ID_EDI_MITT1 = tg904.Tes.EDI_MITT1.PadRight(35)
 
-        bgm.ID_EDI_MITT2 = tg904.Tes.EDI_MITT1.PadRight(4)
-        bgm.ID_EDI_DEST2 = tg904.Tes.EDI_MITT2.PadRight(4)
-        bgm.ID_EDI_DEST1 = tg904.Tes.EDI_DEST1.PadLeft(35)
+        bgm.ID_EDI_MITT2 = tg904.Tes.EDI_MITT2.PadRight(4)
+
+        bgm.ID_EDI_DEST1 = tg904.Tes.EDI_DEST1.PadRight(35)
+
+
+
+
+        bgm.ID_EDI_DEST2 = tg904.Tes.EDI_DEST2.Substring(0, 2).PadRight(4)
+
+
+
+
 
 
         nas.RAGSOCF = tg904.forn.RAGSOC_For.PadRight(70)
@@ -43,15 +58,19 @@ Public Class Form1
         nas.CITTAF = tg904.forn.LOC_FOR.PadRight(35)
         nas.PROVF = tg904.forn.PROV_FOR.PadRight(9)
         nas.CAPF = tg904.forn.CAP_FOR.PadRight(9)
+        nas.CODFORN = tg904.forn.PARTIVA_FOR.PadRight(17)
+        nas.QCODFORN = "VA".PadRight(3)
+
+
         nab.CODBUYER = tg904.mit.PARTIVA_CLI.PadRight(17)
         nab.QCODBUY = "VA".PadRight(3)
+        nab.REGSOC = tg904.mit.RAGSOC_CLI.PadRight(70)
         nab.INDRB = tg904.mit.IND_CLI.PadRight(70)
         nab.CITTAB = tg904.mit.LOC_CLI.PadRight(35)
         nab.PROvB = tg904.mit.PROV_CLI.PadRight(9)
         nab.CAPB = tg904.mit.CAP_CLI.PadRight(9)
         nad.RAGSOCD = tg904.mit.RAGSOC_CLI.PadRight(70)
-        nad.INDIRD = tg904.mit.IND_MAG.PadRight(70)
-        nad.CITTAD = tg904.mit.LOC_MAG.PadRight(35)
+
 
 
         nai.CODFATT = tg904.mit.PARTIVA_CLI.PadRight(17)
@@ -62,27 +81,43 @@ Public Class Form1
         dtm.TIPODATAc = "002"
 
 
+        nai.QCODFATT = "VA".PadRight(3)
+        nai.INDIRi = tg904.mit.IND_CLI.PadRight(70)
+
+        nai.CITTAI = tg904.mit.LOC_MAG.PadRight(35)
+        nai.RAGSOCI = tg904.mit.RAGSOC_CLI.PadRight(70)
+        ''MessageBox.Show(nai.CITTAI)
+
+        ''   nad.PROVD = tg904.mit.PROV_CLI.PadRight(3)
+        nad.CODCONS = tg904.mit.PARTIVA_CLI.PadRight(17)
+        nad.QCODCONS = "VA".PadRight(3)
+        nad.INDIRD = tg904.mit.IND_MAG.PadRight(70)
+        nad.CITTAD = tg904.mit.LOC_MAG.PadRight(35)
+        '' nad.CAPD = tg904.mit.CAP_
 
 
-
+        Dim counter = 0
 
         For i As Integer = 0 To tg904.DetList.Count - 1
             Dim curPro = tg904.DetList(i).pro
             lin = New lin()
-            lin.NUMRIGA = Convert.ToString(i).PadLeft(3)
+            lin.NUMRIGA = Convert.ToString(counter + 1).PadLeft(6, "0")
             lin.DESART = curPro.DES_PRO.PadRight(35)
             lin.UDMQTAORD = curPro.UM.PadRight(3)
-            lin.CODEANTU = curPro.BCODE.PadRight(35)
+            ''  lin.CODEANTU = curPro.BCODE.PadRight(35)
+            lin.CODEANCU = curPro.BCODE.PadRight(35)
+
 
             If (curPro.BCODE <> "") Then
-                lin.TIPOCODCU = "EN".PadRight(3)
+                lin.TIPCODCU = "EN".PadRight(3)
 
             End If
 
             Dim curDet = tg904.DetList(i).det
             lin.QTAORD = curDet.CART_ORD_D.Replace("+", "").Replace("-", "") & "0".PadLeft(15, "0")
             lin.UDMQTAORD = "TU".PadRight(3)
-            lin.NUMRIGA = Convert.ToString(i).PadLeft(3, "0")
+
+
 
 
 
@@ -121,29 +156,41 @@ Public Class Form1
 
             For j As Integer = 1 To lin.NUMRIGA
 
+
             Next
             ftx.NOTE = tg904.Tes.NOTE_ORD_T.PadRight(210)
-            lin.CODDISTU = curPro.CODPRO.PadRight(35)
+            ''MessageBox.Show("SOTTOSTRINGA  " & curPro.CODPRO.Substring(7))
+            lin.CODDISTU = curPro.CODPRO.Substring(7).PadRight(35)
+            MessageBox.Show("cODDISTU " & lin.CODDISTU)
+
             lin.CODFORTU = curPro.CODF.PadRight(35)
 
 
 
 
 
+
+
             result.lin.Add(lin)
+            counter += 1
 
 
 
 
-            Next
+        Next
+
+
         cnt.UDMQORDT = "CT".PadRight(3)
-
-        If Not IsNothing(tg904.pdv) Then
-
+        cnt.NUMLIT = Convert.ToString(counter).PadLeft(15, "0")
 
 
-        End If
+        ''If Not IsNothing(tg904.pdv) Then
 
+
+
+        ''End If
+        strB.Append(lin.ToString())
+        MessageBox.Show(strB.ToString())
 
         result.cnt = cnt
 
@@ -173,7 +220,7 @@ Public Class Form1
         End If
 
 
-        Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
+        '' Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
 
 
         Dim fileName = "test.txt"
@@ -210,13 +257,16 @@ Public Class Form1
 
                 tg904.rub = rub
             End If
-            If (lines(i).StartsWith("DET")) Then
+            If (lines(i).StartsWith("PRO")) Then
                 Dim bloccoDet As New BloccoDet()
-                Dim det As New Dett(lines(i))
+
+                Dim pro As New Pro(lines(i))
+                bloccoDet.pro = pro
+
+                Dim det As New Dett(lines(i + 1))
                 bloccoDet.det = det
 
-                Dim pro As New Pro(lines(i + 1))
-                bloccoDet.pro = pro
+
 
                 For j As Integer = 1 To 6
                     Dim co As New CO(lines(i + 1 + j), j)
