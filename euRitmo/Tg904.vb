@@ -655,7 +655,6 @@ Public Class Pro
     Friend GR3 As String
     Friend GR4 As String
     Friend GR5 As String
-
 End Class
 Public Class Xna_Xft
     Friend TRK
@@ -663,20 +662,17 @@ Public Class Xna_Xft
     Public Sub New(line As String)
         TRK = line.Substring(0, 3).Trim()
         TG904_XVAL = line.Substring(4, 16).Trim()
-
     End Sub
 End Class
 
 Public Class CO
     Public Sub New()
-
     End Sub
     Public Sub New(colStr As String, index As Integer)
         TRK = "CO" & index
         COS = colStr.Substring(3, 12).Trim()
         COSV = colStr.Substring(3, 12).Trim()
         STRINGA = colStr.Substring(15, 136).Trim()
-
     End Sub
     Friend TRK As String
     Friend COS As String
@@ -685,7 +681,6 @@ Public Class CO
 End Class
 Public Class EndTr
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         TRK = line.Substring(0, 3).Trim()
@@ -694,7 +689,6 @@ Public Class EndTr
     Friend TG904_NRK As String
     Friend TRK As String
 End Class
-
 Public Class PPI_PPT
     Friend TRK As String
     Friend PP_IMP As String
