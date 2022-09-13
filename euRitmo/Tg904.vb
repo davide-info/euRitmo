@@ -11,48 +11,19 @@ Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Tg904
     Friend Tes As Tes
-
-
     Friend forn As Forn
     Friend rub As Rub
     Friend pdv As Pdv
     Friend tsp As Tsp
     Friend mit As Mit
-
     Friend DetList As New List(Of BloccoDet)
-
     Friend endtr As EndTr
-   
     Friend ppi As PPI_PPT
     Friend xna As Xna_Xft
-
-    
-
-    Public Sub setend(endtr As EndTr)
-        Me.endtr = endtr
-
-
-    End Sub
-
-
-    Public Function getEnd() As EndTr
-        Return endtr
-
-    End Function
-
-
-
-    ''Friend ppi As PPI_PPT
     Friend ppt As PPI_PPT
-
-    ' Friend xna As Xna_Xft
     Friend xft As Xna_Xft
-
     Public Overrides Function Tostring() As String
         Dim str = ""
-
-
-
         If Not IsNothing(Tes) Then
 
             str = Tes.ToString()
@@ -60,13 +31,6 @@ Public Class Tg904
         Return str
     End Function
 End Class
-
-
-
-
-
-
-
 Public Class Det
     Friend SCHEMA As String
     Friend NART_ORD_D As String
@@ -122,66 +86,25 @@ End Class
 Public Class Tes
 
     Friend TRK As String
-
-
     Friend OP As String
     Friend DTOPE As String
-
-
-
     Friend TMOPE As String
-
     Friend DTPC As String
-
-
     Friend CMPT As String
-
-
     Friend STATO_ORD As String
-
-
     Friend COD_BUYER As String
-
-
-
     Friend DES_BUYER As String
-
-
     Friend NART_ORD_T As String
-
-
-
     Friend NART_CON_T As String
-
-
     Friend CART_ORD_OMT_T As String
-
     Friend CART_CON_T As String
-
-
-
-
     Friend CART_CON_OM_T As String
-
     Friend PLT_ORD_T As String
-
-
-
     Friend PLT_CON_T As String
-
-
     Friend VAL_ORD_T As String
-
-
     Friend NOTE_ORD_T As String
-
-
-
     Friend SC_ORD_T As String
-
     Friend DTCON As String
-
-
     Friend DTDOC As String
     Friend ORD As String
     Friend DTORD As String
@@ -218,16 +141,10 @@ Public Class Tes
     Friend TEEDIUM As String
     Friend TEMEA As String
     Friend TEOM As String
-
-
     Public Sub New()
-
     End Sub
 
     Public Sub New(ByVal stringTes As String)
-        ''MessageBox.Show("TES " & stringTes)
-
-
         TRK = stringTes.Substring(0, 3).Trim()
         OP = stringTes.Substring(3, 1).Trim()
         TMOPE = stringTes.Substring(12, 8).Trim()
@@ -282,27 +199,10 @@ Public Class Tes
         TEEDIUM = stringTes.Substring(763, 1).Trim()
         TEMEA = stringTes.Substring(764, 1).Trim()
         TEOM = stringTes.Substring(765, 1).Trim()
-
-        ''MessageBox.Show("TG904_NART_ORD_T " & TG904_NART_ORD_T)
-
-
     End Sub
-
-
-
-
-
-
-
-
-
-
-
 End Class
 Public Class Forn
-
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         '' MessageBox.Show("FORN " & line).Trim()
@@ -337,8 +237,6 @@ Public Class Forn
         EMAIL2 = line.Substring(655, 50).Trim()
         EMAIL3 = line.Substring(705, 50).Trim()
         WEB = line.Substring(755, 50).Trim()
-
-
         TELEX_FOR1 = line.Substring(805, 15).Trim()
         '' MessageBox.Show("Telex-for1 " & TELEX_FOR1).Trim()
         FAX_FOR1 = line.Substring(820, 15).Trim()
@@ -350,31 +248,17 @@ Public Class Forn
         FG050_FLAG4 = line.Substring(871, 1).Trim()
         FG050_FLAG5 = line.Substring(872, 1).Trim()
         CODFORR = line.Substring(873, 6).Trim()
-
     End Sub
 
     Friend TRK As String
     Friend RAGSOC_For As String
     Friend RAPP_TEL As String
-
-
     Friend RAGSOC_E_FOR As String
-
-
     Friend BANCA_FOR As String
-
     Friend TELEFONO_FOR As String
-
     Friend TELEX_FOR As String
-
-
     Friend FAX_FOR As String
-
-
     Friend RAPP As String
-
-
-
     Friend CAPO_AREA As String
     Friend CAPO_AREA_TEL As String
     Friend DIR_COMM As String
@@ -391,7 +275,6 @@ Public Class Forn
     Friend CODFISC_For As String
     Friend PARTIVA_FOR As String
     Friend ORA_PREF As String
-
     Friend EMAIL1 As String
     Friend EMAIL2 As String
     Friend EMAIL3 As String
@@ -425,7 +308,6 @@ Public Class Rub
 End Class
 Public Class Pdv
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         '' MessageBox.Show("PDV " & line)
@@ -502,8 +384,6 @@ Public Class Tsp
         CODTRASP_EMAIL2 = line.Substring(294, 50).Trim()
         CODTRASP_EMAIL3 = line.Substring(344, 50).Trim()
         CODTRASP_DTPC = line.Substring(394, 8).Trim()
-
-
     End Sub
     Friend TRK As String
     Friend ODTRASP_TLX As String
@@ -527,7 +407,6 @@ Public Class Tsp
     Friend CODTRASP_DTPC As String
 End Class
 Public Class Mit
-
     Public Sub New()
 
     End Sub
@@ -583,8 +462,6 @@ Public Class Mit
     Friend TEL_MAG As String
     Friend TELEX_MAG As String
     Friend FAX_MAG As String
-
-
 End Class
 
 'TO DO fare pull di Tg094.vb pc nuovo'
@@ -595,49 +472,28 @@ Public Class Dett
 
     End Sub
     Public Sub New(line As String)
-        ''MessageBox.Show("DET " & line)
         TRK = line.Substring(0, 3).Trim()
-
         SCHEMA = line.Substring(3, 4).Trim()
-
         NART_ORD_D = line.Substring(7, 10).Trim()
-
         NART_ORD_OM_D = line.Substring(17, 10).Trim()
-
         NART_CON_D = line.Substring(27, 10).Trim()
-
         NART_CON_OM_D = line.Substring(37, 10).Trim()
-
         CART_ORD_D = line.Substring(47, 10).Trim()
-
         CART_ORD_OM_D = line.Substring(57, 10).Trim()
-
         CART_CON_D = line.Substring(67, 10).Trim()
-
         CART_CON_OM_D = line.Substring(77, 10).Trim()
-
         PLT_ORD_D = line.Substring(87, 8).Trim()
-
         PLT_CON_D = line.Substring(95, 8).Trim()
-
         FORM_PLT_FORN = line.Substring(103, 20).Trim()
-
         CART_STRATO_FOR = line.Substring(103, 4).Trim()
-
         NUM_STRATO_FOR = line.Substring(107, 4).Trim()
-
         QTA_FORN_FOR = line.Substring(111, 4).Trim()
-
         QTA_TERMO_FOR = line.Substring(115, 4).Trim()
-
         NOTE_ORD_D = line.Substring(123, 80).Trim()
-
         PNT_CAR = line.Substring(203, 8).Trim()
-
         STATO_RIG = line.Substring(211, 1).Trim()
-
-
     End Sub
+
     Friend TRK As String
     Friend CART_ORD_D As String
     Friend QTA_FORN_FOR As String
@@ -669,135 +525,71 @@ Public Class Pro
 
     End Sub
     Public Sub New(line As String)
-        '' MessageBox.Show("PRO " & proStr)                                       .Trim()
         TRK = line.Substring(0, 3).Trim()
-        '' MessageBox.Show("TRK  " & TRK)
         CODPRO = line.Substring(3, 12).Trim()
-        ''MessageBox.Show("CODICE PRODOTTO " & CODPRO)
-
         DES_PRO = line.Substring(15, 50).Trim()
-
         BCODE = line.Substring(65, 14).Trim()
-
         TIPO = line.Substring(79, 1).Trim()
-
         PUM = line.Substring(80, 8).Trim()
-
         PUM_UM = line.Substring(80, 2).Trim()
-
         PUM_QTA = line.Substring(82, 6).Trim()
-
         GR = line.Substring(88, 2).Trim()
-
         PESO_PRO = line.Substring(90, 6).Trim()
-
         DIM_PRO = line.Substring(96, 12).Trim()
-
         DIM_LATO1_PRO = line.Substring(96, 4).Trim()
-
         DIM_LATO2_PRO = line.Substring(100, 4).Trim()
-
         DIM_LATO3_PRO = line.Substring(104, 4).Trim()
-
         PNT_SC_CAR = line.Substring(108, 6).Trim()
-
         FORMA = line.Substring(114, 3).Trim()
-
         DURATA = line.Substring(117, 4).Trim()
-
         QTA_BCODE = line.Substring(121, 4).Trim()
-
         QTA_FORN = line.Substring(125, 6).Trim()
-
         QTA_TERMO = line.Substring(131, 6).Trim()
-
         FORM_PLT_MAG = line.Substring(137, 8).Trim()
-
         CART_STRATO_MAG = line.Substring(137, 4).Trim()
-
         NUM_STRATO_MAG = line.Substring(141, 4).Trim()
-
         QTA_VENDITA = line.Substring(145, 6).Trim()
-
         PESO_UVC = line.Substring(151, 6).Trim()
-
         DIM_UVC = line.Substring(157, 12).Trim()
-
         Dim_LATO1_UVC = line.Substring(157, 4).Trim()
-
         DIM_LATO2_UVC = line.Substring(161, 4).Trim()
-
         DIM_LATO3_UVC = line.Substring(165, 4).Trim()
-
         VARIETA = line.Substring(170, 10).Trim()
-
         NAZORI = line.Substring(180, 4).Trim()
-
         LOCAL = line.Substring(184, 5).Trim()
-
         CALIBRO = line.Substring(189, 7).Trim()
-
         CATEG = line.Substring(196, 2).Trim()
-
         TCONF = line.Substring(198, 4).Trim()
-
         TIMB = line.Substring(202, 3).Trim()
-
         FIMB = line.Substring(205, 1).Trim()
-
         UM = line.Substring(206, 2).Trim()
-
         CODIVA = line.Substring(208, 3).Trim()
-
         ALIQ = line.Substring(211, 4).Trim()
-
         CODF_TV = line.Substring(215, 200) 'Arrivato riga 288 file tg904.txt'   .Trim()
-
         CODF_E = line.Substring(215, 200).Trim()
-
         CODF = line.Substring(215, 20) 'Devo inserire questo campo?'            .Trim()
-
         PG_LIST = line.Substring(415, 4).Trim()
-
         RG_LIST = line.Substring(419, 2).Trim()
-
         P_BUYER = line.Substring(421, 4).Trim()
-
         P_DES_BUYER = line.Substring(425, 8).Trim()
-
         BCODE_IMB = line.Substring(433, 14).Trim()
-
         QTA_BCODE_IMB = line.Substring(447, 4).Trim()
-
         DTSCAD1 = line.Substring(451, 8).Trim()
-
         DTSCAD2 = line.Substring(459, 8).Trim()
-
         ART62 = line.Substring(467, 1).Trim()
-
         RE5 = line.Substring(468, 10).Trim()
-
         LNF = line.Substring(478, 2).Trim()
-
         BCODA = line.Substring(480, 30).Trim()
-
         DTINS_BCODE = line.Substring(510, 8).Trim()
-
         DTINS_BCODE_IMB = line.Substring(518, 8).Trim()
-
         DTINS_BCODA = line.Substring(526, 8).Trim()
-
         GR1 = line.Substring(534, 2).Trim()
-
         GR2 = line.Substring(536, 2).Trim()
-
         GR3 = line.Substring(538, 2).Trim()
-
         GR4 = line.Substring(540, 2).Trim()
-
         GR5 = line.Substring(542, 2)
-
     End Sub
+
     Friend TRK As String
 
     Friend CODPRO As String
@@ -868,19 +660,11 @@ End Class
 Public Class Xna_Xft
     Friend TRK
     Friend TG904_XVAL As String
-
-
     Public Sub New(line As String)
-        ''  MessageBox.Show("XNA " & line)                                    .TRim()
-
         TRK = line.Substring(0, 3).Trim()
-
         TG904_XVAL = line.Substring(4, 16).Trim()
 
     End Sub
-
-
-
 End Class
 
 Public Class CO
@@ -888,7 +672,6 @@ Public Class CO
 
     End Sub
     Public Sub New(colStr As String, index As Integer)
-        ''   MessageBox.Show("COL " & colStr)
         TRK = "CO" & index
         COS = colStr.Substring(3, 12).Trim()
         COSV = colStr.Substring(3, 12).Trim()
@@ -905,10 +688,8 @@ Public Class EndTr
 
     End Sub
     Public Sub New(line As String)
-        ''   MessageBox.Show("ENDTR " & line)
         TRK = line.Substring(0, 3).Trim()
         TG904_NRK = line.Substring(4, 6).Trim()
-
     End Sub
     Friend TG904_NRK As String
     Friend TRK As String
@@ -933,10 +714,6 @@ Public Class PPI_PPT
         PP_IVAV = line.Substring(17, 14).Trim() 'Devo aggiungere questo Campo?' 
         PP_ALIQ = line.Substring(31, 4).Trim()
         PP_CODIVA = line.Substring(35, 3).Trim()
-
-
-
-
     End Sub
 End Class
 
