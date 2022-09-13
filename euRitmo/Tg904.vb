@@ -77,14 +77,8 @@ Public Class BloccoDet
     Friend det As New Dett()
     Friend pro As New Pro()
     Friend coList As New List(Of CO)
-
-
-
-
 End Class
-
 Public Class Tes
-
     Friend TRK As String
     Friend OP As String
     Friend DTOPE As String
@@ -229,16 +223,13 @@ Public Class Forn
         LOC_FOR = line.Substring(521, 50).Trim()
         PROV_FOR = line.Substring(571, 3).Trim()
         CODFISC_For = line.Substring(574, 16).Trim()
-        '' MessageBox.Show("CODICE FISCALE FORNITORE " & CODFISC_For).Trim()
         PARTIVA_FOR = line.Substring(590, 11).Trim()
         ORA_PREF = line.Substring(601, 4).Trim()
         EMAIL1 = line.Substring(605, 50).Trim()
-        '' MessageBox.Show("Email fornitore " & EMAIL1).Trim()
         EMAIL2 = line.Substring(655, 50).Trim()
         EMAIL3 = line.Substring(705, 50).Trim()
         WEB = line.Substring(755, 50).Trim()
         TELEX_FOR1 = line.Substring(805, 15).Trim()
-        '' MessageBox.Show("Telex-for1 " & TELEX_FOR1).Trim()
         FAX_FOR1 = line.Substring(820, 15).Trim()
         COD_PAG = line.Substring(835, 3).Trim()
         COD_PAG_DES = line.Substring(838, 30).Trim()
@@ -249,7 +240,6 @@ Public Class Forn
         FG050_FLAG5 = line.Substring(872, 1).Trim()
         CODFORR = line.Substring(873, 6).Trim()
     End Sub
-
     Friend TRK As String
     Friend RAGSOC_For As String
     Friend RAPP_TEL As String
@@ -295,22 +285,17 @@ Public Class Rub
     Friend RUB_SERVIZIO As String
     Friend RUB_IND As String
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
-        '' MessageBox.Show("RUB " & line)
         TRK = line.Substring(0, 3).Trim()
         RUB_SERVIZIO = line.Substring(3, 8).Trim()
         RUB_IND = line.Substring(12, 200).Trim()
-
     End Sub
-
 End Class
 Public Class Pdv
     Public Sub New()
     End Sub
     Public Sub New(line As String)
-        '' MessageBox.Show("PDV " & line)
         TRK = line.Substring(0, 3).Trim()
         RAGSOC_PDV = line.Substring(3, 50).Trim()
         RAGSOC_E_PDV = line.Substring(53, 40).Trim()
@@ -361,10 +346,8 @@ End Class
 
 Public Class Tsp
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
-        ''    MessageBox.Show("TSP " & line)
         TRK = line.Substring(0, 3).Trim()
         CODTRASP = line.Substring(3, 6).Trim()
         CODTRASP_TE1 = line.Substring(9, 1).Trim()
@@ -408,10 +391,8 @@ Public Class Tsp
 End Class
 Public Class Mit
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
-        ''   MessageBox.Show("MIT " & line)
         TRK = line.Substring(0, 3).Trim()
         SIGLA = line.Substring(3, 2).Trim()
         DES_MAG = line.Substring(5, 30).Trim()
@@ -435,8 +416,6 @@ Public Class Mit
         TEL_MAG = line.Substring(416, 15).Trim()
         TELEX_MAG = line.Substring(431, 15).Trim()
         FAX_MAG = line.Substring(446, 15).Trim()
-
-        ''  MessageBox.Show("Telefono CLI " & TELEFONO_CLI)
     End Sub
     Friend TRK As String
     Friend SIGLA As String
@@ -517,12 +496,10 @@ Public Class Dett
     Friend PNT_CAR As String
     Friend STATO_RIG As String
     Friend FIMB As String
-
 End Class
 'Arrivato riga 248'
 Public Class Pro
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         TRK = line.Substring(0, 3).Trim()
@@ -591,7 +568,6 @@ Public Class Pro
     End Sub
 
     Friend TRK As String
-
     Friend CODPRO As String
     Friend FIMB As String
     Friend RG_LIST As String

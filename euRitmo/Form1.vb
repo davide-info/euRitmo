@@ -110,8 +110,6 @@ Public Class Form1
             counter += 1
         Next
         cnt.NUMLIT = (Convert.ToString(counter) & "000").PadLeft(15, "0")
-        strB.Append(lin.ToString())
-        MessageBox.Show(strB.ToString())
         result.cnt = cnt
         result.bgm = bgm
         result.nab = nab
@@ -124,7 +122,6 @@ Public Class Form1
         Return result
     End Function
     Private Sub writeToFile(ordine_edi As ordine_edi)
-        ''MessageBox.Show(Environment.CurrentDirectory)
         Const dirName = "C:\test"
         If Not Directory.Exists(dirName) Then
             Directory.CreateDirectory(dirName)
@@ -192,7 +189,6 @@ Public Class Form1
         Dim result As New StringBuilder()
         Dim regexStr = "(?<tes>TES)(?<val1>[a-z-A-Z-0-9]{2,40})"
         Dim regex As New Regex(regexStr)
-        ''Console.WriteLine(regex)
         Dim names As String() = regex.GetGroupNames()
         Dim match As Match = regex.Match(line)
         Dim str As String
@@ -207,7 +203,6 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             Dim tg904 = testParseFile(OpenFileDialog1.FileName)
-            ''TextBox1.AppendText(str)
             Dim str = tg904.Tostring()
             Dim converter = MapToOrdineEdi(tg904)
             writeToFile(converter)

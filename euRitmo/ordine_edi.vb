@@ -172,7 +172,6 @@ Public Class RFF
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
         builder.Append(TIPOREC).Append(FORDPROM).Append(NUMORDF).Append(DATAORDF).Append(ORAORDF).Append(NUMORDC).Append(DATAORDC).Append(ORAORDC).Append(NUMPORDF).Append(NUMPORDC)
-
         Return builder.ToString()
     End Function
 End Class
@@ -306,7 +305,6 @@ Public Class Nam
 End Class
 Public Class Dtm
     Friend TIPOREC As String = "DTM"
-
     Friend DATACONS As String
     Friend ORACONS As String = "".PadRight(4)
     Friend TIPODATAc As String = "".PadLeft(3)
@@ -352,7 +350,6 @@ Public Class Pat
         builder.Append(TIPOREC).Append(TIPOCOND).Append(DATASCAD).Append(RIFERMP).Append(RELTERMP).Append(UNTEMP).Append(NUMTEMP).Append(IMPORTO).Append(DIVISA).Append(PERC).Append(DESCRIZ).Append(BANCACOD).Append(BANCADESC).Append(FACTOR).Append(COPAG).Append(MEZZOPAG)
         Return builder.ToString()
     End Function
-
 End Class
 Public Class Tod
     Friend TIPOREC As String = "TOD"
@@ -416,7 +413,6 @@ Public Class lin
             Append(UDMPRUNZ2).
             Append(PRZBASE)
         Return builder.ToString()
-
     End Function
 End Class
 Public Class MEA
@@ -523,7 +519,6 @@ Public Class Loc
         builder.Append(TIPOREC).Append(CODCONS).Append(QCODCONS).Append(RAGSOCD).Append(INDIRD).Append(CITTAD).Append(PROVD).Append(CAPD).Append(NAZIOD).Append(QTASPLIt).Append(UDMQORD)
         Return builder.ToString()
     End Function
-
 End Class
 Public Class Dtl
     Friend TIPOREC As String = "DTL"
