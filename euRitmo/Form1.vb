@@ -173,7 +173,7 @@ Public Class Form1
         End If
 
 
-        Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
+        '' Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
 
 
         Dim fileName = "test.txt"
@@ -281,7 +281,7 @@ Public Class Form1
             Dim tg904 = testParseFile(OpenFileDialog1.FileName)
             ''TextBox1.AppendText(str)
 
-            Dim str = tg904.Tostring()
+            '' Dim str = tg904.Tostring()
             Dim converter = MapToOrdineEdi(tg904)
             writeToFile(converter)
 
