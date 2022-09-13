@@ -199,7 +199,6 @@ Public Class Forn
     Public Sub New()
     End Sub
     Public Sub New(line As String)
-        '' MessageBox.Show("FORN " & line).Trim()
         TRK = line.Substring(0, 3).Trim()
         RAGSOC_For = line.Substring(3, 50).Trim()
         RAGSOC_E_FOR = line.Substring(53, 40).Trim()
