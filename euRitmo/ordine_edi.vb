@@ -1,5 +1,4 @@
 ﻿Imports System.Text
-
 Public Class ordine_edi
     Friend bgm As Bgm
     Friend Rff As RFF
@@ -28,91 +27,91 @@ Public Class ordine_edi
     Public Overrides Function ToString() As String
         Dim builder As New StringBuilder()
         If (Not IsNothing(bgm)) Then
-            builder.Append(bgm.ToString() & " ")
+            builder.Append(bgm.ToString() & vbCrLf)
         End If
 
 
         If Not IsNothing(Rff) Then
-            builder.Append(Rff.ToString() & " ")
+            builder.Append(Rff.ToString() & vbCrLf)
+
         End If
         If Not IsNothing(RFC) Then
-            builder.Append(RFC.ToString() & " ")
+            builder.Append(RFC.ToString() & vbCrLf)
         End If
 
         If (Not IsNothing(nas)) Then
-            builder.Append(nas.ToString() & " ")
+            builder.Append(nas.ToString() & vbCrLf)
         End If
         If Not IsNothing(Me.cta) Then
-            builder.Append(cta.ToString() & " ")
+            builder.Append(cta.ToString() & vbCrLf)
 
         End If
         If Not IsNothing(nab) Then
-            builder.Append(nab.ToString() & " ")
+            builder.Append(nab.ToString() & vbCrLf)
 
         End If
         If Not IsNothing(nad) Then
-            builder.Append(nad.ToString() & " ")
+            builder.Append(nad.ToString() & vbCrLf)
         End If
 
 
         If Not IsNothing(nai) Then
-            builder.Append(nai.ToString() & " ")
+            builder.Append(nai.ToString() & vbCrLf)
         End If
         If Not IsNothing(nac) Then
-            builder.Append(nac.ToString() & " ")
+            builder.Append(nac.ToString() & vbCrLf)
         End If
         If Not IsNothing(nam) Then
-            builder.Append(nam.ToString() & " ")
+            builder.Append(nam.ToString() & vbCrLf)
         End If
         If Not IsNothing(dtm) Then
-            builder.Append(dtm.ToString() & " ")
+            builder.Append(dtm.ToString() & vbCrLf)
         End If
         If Not IsNothing(ftx) Then
-            builder.Append(ftx.ToString() & " ")
+            If ftx.NOTE.Trim() <> "" Then
+                builder.Append(ftx.ToString() & vbCrLf)
+            End If
         End If
         If Not IsNothing(pat) Then
-            builder.Append(pat.ToString() & " ")
+            builder.Append(pat.ToString() & vbCrLf)
         End If
         If Not IsNothing(tod) Then
-            builder.Append(tod.ToString() & " ")
+            builder.Append(tod.ToString() & vbCrLf)
         End If
 
         For Each l As lin In lin
             If (Not IsNothing(l)) Then
-                builder.Append(l.ToString())
+                builder.Append(l.ToString() & vbCrLf)
             End If
         Next
-        builder.Append(" ")
+
         If Not IsNothing(pac) Then
-            builder.Append(pac.ToString() & " ")
+            builder.Append(pac.ToString() & vbCrLf)
         End If
 
         If Not IsNothing(mei) Then
-            builder.Append(mei.ToString() & " ")
+            builder.Append(mei.ToString() & vbCrLf)
         End If
         If Not IsNothing(dtr) Then
-            builder.Append(dtr.ToString() & " ")
+            builder.Append(dtr.ToString() & vbCrLf)
         End If
         If Not IsNothing(ald) Then
-            builder.Append(ald.ToString() & " ")
+            builder.Append(ald.ToString() & vbCrLf)
         End If
         If Not IsNothing(loc) Then
-            builder.Append(loc.ToString() & " ")
+            builder.Append(loc.ToString() & vbCrLf)
         End If
         If Not IsNothing(dtl) Then
-            builder.Append(dtl.ToString() & " ")
+            builder.Append(dtl.ToString() & vbCrLf)
         End If
         If Not IsNothing(cnt) Then
-            builder.Append(cnt.ToString() & " ")
+            builder.Append(cnt.ToString() & vbCrLf)
         End If
-
         Return builder.ToString()
     End Function
-
 End Class
 
 Public Class Bgm
-
     Friend TIPOREC As String = "BGM"
     Friend ID_EDI_MITT1 As String = "".PadLeft(35)
     Friend ID_EDI_MITT2 As String = "".PadLeft(4)
@@ -121,7 +120,8 @@ Public Class Bgm
     Friend ID_EDI_DEST2 As String = "".PadLeft(4)
     Friend ID_EDI_DEST3 As String = "".PadLeft(14)
     Friend TIPODOC As String = "".PadLeft(6)
-    Friend NUMDOC As String = "".PadLeft(35)
+    Friend NUMDOC1 As String
+    Friend numdoc2 As String
     Friend DATADOC As String = "".PadLeft(8)
     Friend FORDPROM As String = "".PadLeft(4)
     Friend NUMORDF As String = "".PadLeft(14)
@@ -129,14 +129,13 @@ Public Class Bgm
     Friend ORAORDF As String ''"".PadLeft(4)
     Friend NUMORDC As String = "".PadLeft(14)
     Friend DATAORDC As String
-    Friend ORAORDC As String
+    Friend oradoc As String
     Friend NUMPROFDF As String
     Friend numpordc As String
     Friend Codazion As String = "".PadLeft(3)
     Friend FLAGIMPE As String = "".PadLeft(3)
     Friend TIPOORD As String = "".PadLeft(3)
     Public Sub New()
-
     End Sub
     Public Overrides Function ToString() As String
         Dim builder As New StringBuilder()
@@ -147,43 +146,17 @@ Public Class Bgm
         builder.Append(ID_EDI_DEST1)
         builder.Append(ID_EDI_DEST2)
         builder.Append(ID_EDI_DEST3)
-        builder.Append(Me.NUMDOC)
-        builder.Append(Me.NUMORDC)
-        builder.Append(Me.NUMORDF)
-        builder.Append(DATAORDF)
-        builder.Append(ORAORDF)
-        builder.Append(NUMORDC)
-        builder.Append(DATAORDC)
-        builder.Append(ORAORDC)
-        builder.Append(NUMPROFDF)
-        builder.Append(numpordc)
+        builder.Append(TIPODOC)
+        builder.Append(NUMDOC1)
+        builder.Append(DATADOC)
+        builder.Append(oradoc)
         builder.Append(Codazion)
         builder.Append(FLAGIMPE)
         builder.Append(TIPOORD)
-
-
-
-
-
+        builder.Append(numdoc2)
         Return builder.ToString()
     End Function
 End Class
-
-'Public Enum TipoDoc
-'    ORDCHG
-'    ORDERS
-'    ORDPRP
-'    ORDSRP
-'    ORDSLS
-
-
-'End Enum
-'Public Enum Codazion
-'    A
-'    M
-'    R
-'End Enum
-
 Public Class RFF
     Friend TIPOREC As String = "RFF"
     Friend FORDPROM As String = "".PadLeft(3)
@@ -193,18 +166,14 @@ Public Class RFF
     Friend NUMORDC As String = "".PadLeft(35)
     Friend DATAORDC As String
     Friend ORAORDC As String
-
     Friend NUMPORDF As String = "".PadLeft(35)
     Friend NUMPORDC As String = "".PadLeft(35)
 
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
-        builder.Append(TIPOREC).Append(FORDPROM).Append(NUMORDF).Append(DATAORDF).Append(NUMORDC).Append(DATAORDC).Append(ORAORDC).Append(NUMPORDF).Append(NUMPORDC)
-
+        builder.Append(TIPOREC).Append(FORDPROM).Append(NUMORDF).Append(DATAORDF).Append(ORAORDF).Append(NUMORDC).Append(DATAORDC).Append(ORAORDC).Append(NUMPORDF).Append(NUMPORDC)
         Return builder.ToString()
     End Function
-
-
 End Class
 Public Class RFC
     Friend TIPOREC As String = "RFC"
@@ -216,8 +185,6 @@ Public Class RFC
         builder.Append(TIPOREC).Append(NUMCO).Append(DATAINCO).Append(DATAFICO)
         Return builder.ToString()
     End Function
-
-
 End Class
 Public Class NAS
     Friend TIPOREC As String = "NAS"
@@ -231,14 +198,9 @@ Public Class NAS
     Friend NAZIOF As String = "".PadLeft(3)
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
-        builder.Append(TIPOREC).Append(CODFORN).Append(QCODFORN).Append(INDIRF).Append(CITTAF).Append(CAPF).Append(NAZIOF).Append(QCODFORN)
-
-
+        builder.Append(TIPOREC).Append(CODFORN).Append(QCODFORN).Append(RAGSOCF).Append(INDIRF).Append(CITTAF).Append(PROVF).Append(CAPF).Append(NAZIOF)
         Return builder.ToString()
-
     End Function
-
-
 End Class
 
 Public Class CTA
@@ -251,11 +213,8 @@ Public Class CTA
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
         builder.Append(TIPOREC).Append(FUNZCONT).Append(TELEFONO).Append(FAX).Append(TELEX).Append(EMAIL)
-
         Return builder.ToString()
-
     End Function
-
 End Class
 Public Class NAB
     Friend TIPOREC As String = "NAB"
@@ -287,7 +246,7 @@ Public Class Nad
     Friend NAZIOD As String = "".PadLeft(3)
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
-        builder.Append(TIPOREC).Append(CODCONS).Append(QCODCONS).Append(RAGSOCD).Append(INDIRD).Append(CITTAD).Append(CAPD).Append(NAZIOD)
+        builder.Append(TIPOREC).Append(CODCONS).Append(QCODCONS).Append(RAGSOCD).Append(INDIRD).Append(CITTAD).Append(PROVD).Append(CAPD).Append(NAZIOD)
         Return builder.ToString()
     End Function
 
@@ -308,22 +267,7 @@ Public Class Nai
         builder.Append(TIPOREC).Append(CODFATT).Append(QCODFATT).Append(RAGSOCI).Append(INDIRi).Append(CITTAI).Append(PROVI).Append(CAPI).Append(NAZOI)
         Return builder.ToString()
     End Function
-
 End Class
-
-
-
-
-
-
-'Public Enum TipoFattura
-'    Cod = 14
-'    VA
-'    CodVenditore = 91
-'    CodCompratore = 92
-'    ZZ
-'End Enum
-
 Public Class Nac
     Friend TIPOREC As String = "NAC"
     Friend CODMAGI As String = "".PadLeft(17)
@@ -336,19 +280,10 @@ Public Class Nac
     Friend NAZIOC As String = "".PadLeft(3)
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
-        builder.Append(TIPOREC).Append(CODMAGI).Append(RAGSOCC).Append(CITTAC).Append(PROVC).Append(CAPC).Append(NAZIOC)
-
-
+        builder.Append(TIPOREC).Append(CODMAGI).Append(QCODMAGI).Append(RAGSOCC).Append(INDIRC).Append(CITTAC).Append(PROVC).Append(CAPC).Append(NAZIOC)
         Return builder.ToString()
     End Function
-
 End Class
-
-'Public Enum TipoCodiceMerce
-'    Ean = 14
-
-'End Enum
-
 Public Class Nam
     Friend TIPOREC As String = "NAM"
     Friend CODMAGP As String = "".PadLeft(17)
@@ -360,38 +295,18 @@ Public Class Nam
     Friend CAPM As String = "".PadLeft(9)
     Friend NAZIOM As String = "".PadLeft(3)
     Public Sub New()
-
-
     End Sub
 
     Public Overrides Function ToString() As String
         Dim builder As New StringBuilder()
         builder.Append(Me.TIPOREC).Append(Me.CODMAGP).Append(QCODMAGP).Append(RAGOSCM).Append(INDRIM).Append(CITTAM).Append(PROVM).Append(CAPM).Append(NAZIOM)
-
-
-
         Return builder.ToString()
-
     End Function
-
-
-
 End Class
-
-'Public Enum TipoCodiceMagazzino
-'    Ean = 14
-'    VA
-'    CodiceVenditore = 91
-'    CodiceCompratore = 92
-'    ZZ
-
-'End Enum
-
 Public Class Dtm
     Friend TIPOREC As String = "DTM"
-
     Friend DATACONS As String
-    Friend ORACONS As String
+    Friend ORACONS As String = "".PadRight(4)
     Friend TIPODATAc As String = "".PadLeft(3)
     Friend DATACON2 As String
     Friend ORACON2 As String
@@ -402,18 +317,7 @@ Public Class Dtm
 
         Return builder.ToString()
     End Function
-
-
 End Class
-
-'Public Enum tipoDataConsegna
-'    DataRichiesta = 2
-'    NonConsegnarePrima = 3
-'    DataTassativa = 69
-'    DataPrevista = 76
-
-'End Enum
-
 Public Class Ftx
     Friend TIPOREC As String = "FTX"
     Friend DIVISA As String = "".PadLeft(3)
@@ -444,25 +348,9 @@ Public Class Pat
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
         builder.Append(TIPOREC).Append(TIPOCOND).Append(DATASCAD).Append(RIFERMP).Append(RELTERMP).Append(UNTEMP).Append(NUMTEMP).Append(IMPORTO).Append(DIVISA).Append(PERC).Append(DESCRIZ).Append(BANCACOD).Append(BANCADESC).Append(FACTOR).Append(COPAG).Append(MEZZOPAG)
-
-
         Return builder.ToString()
     End Function
-
 End Class
-
-
-
-'Public Enum TipoCondizionePagamento
-'    TerminiPenalita = 20
-'    PagamentoARate = 21
-'    Sconti = 22
-'    PagamentoCompleto = 10
-
-
-
-'End Enum
-
 Public Class Tod
     Friend TIPOREC As String = "TOD"
     Friend CODCONS As String = "".PadLeft(3)
@@ -472,25 +360,24 @@ Public Class Tod
     Friend DESCOND2 As String = "".PadLeft(70)
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
-        builder.Append(TIPOREC).Append(CODCONS).Append(CODCOST).Append(CODCONS).Append(DESCOND1).Append(DESCOND2)
+        builder.Append(TIPOREC).Append(CODCONS).Append(CODCOST).Append(CODCOND).Append(DESCOND1).Append(DESCOND2)
         Return builder.ToString()
     End Function
-
-
 End Class
 Public Class lin
     Friend TIPOREC As String = "LIN"
     Friend NUMRIGA As String
-    Friend CODICEANCU As String = "".PadLeft(35)
-    Friend TIPOCODCU As String = "".PadLeft(3)
+    Friend CODEANCU As String = "".PadLeft(35)
+    Friend TIPCODCU As String = "".PadLeft(3)
     Friend CODEANTU As String = "".PadLeft(35)
     Friend CODFORTU As String = "".PadLeft(35)
     Friend CODDISTU As String = "".PadLeft(35)
     Friend DESART As String = "".PadLeft(35)
     Friend FLINPROM As String = "".PadLeft(3)
     Friend QTAORD As String = ""
-    Friend UDMQTAORD As String = "".PadLeft(3)
+    Friend UDMQORD As String = "".PadLeft(3)
     Friend PRZUNI As String = ""
+
     Friend TIPOPRZ As String = "".PadLeft(3)
     Friend UDMPRZUN As String = "".PadLeft(3)
     Friend NRCUINTU As String = ""
@@ -500,17 +387,33 @@ Public Class lin
     Friend TIPOPRZ2 As String = "".PadLeft(3)
     Friend UDMPRUNZ2 As String = "".PadLeft(3)
     Friend PRZBASE As String = ""
+    Friend CODAZIOL As String = "".PadLeft(3)
     Public Overrides Function ToString() As String
-
         Dim builder As New StringBuilder()
-        builder.Append(Me.TIPOREC).Append(Me.NUMRIGA).Append(TIPOCODCU).Append(Me.CODEANTU).Append(CODFORTU).Append(CODDISTU).Append(DESART).Append(FLINPROM).Append(QTAORD).Append(UDMQTAORD).Append(PRZUNI).Append(TIPOPRZ).Append(UDMPRZUN).Append(NRCUINTU).Append(QTACONF).Append(UDMQCONF).Append(PRZUN2).Append(TIPOPRZ2).Append(UDMPRUNZ2).Append(PRZBASE)
-
-
-
+        builder.Append(Me.TIPOREC).
+            Append(Me.NUMRIGA).
+            Append(CODEANCU).
+            Append(TIPCODCU).
+            Append(CODEANTU).
+            Append(CODFORTU).
+            Append(CODDISTU).
+            Append(DESART).
+            Append(FLINPROM).
+            Append(QTAORD).
+            Append(UDMQORD).
+            Append(PRZUNI).
+            Append(TIPOPRZ).
+            Append(UDMPRZUN).
+            Append(NRCUINTU).
+            Append(CODAZIOL).
+            Append(QTACONF).
+            Append(UDMQCONF).
+            Append(PRZUN2).
+            Append(TIPOPRZ2).
+            Append(UDMPRUNZ2).
+            Append(PRZBASE)
         Return builder.ToString()
-
     End Function
-
 End Class
 Public Class MEA
     Friend TIPOREC As String = "MEA"
@@ -527,8 +430,6 @@ Public Class MEA
         builder.Append(TIPOREC).Append(QUALMISURA).Append(IDDICOMMNCOD).Append(SIGNIMISCOD).Append(QUALUNIMIS).Append(VALOMISURA).Append(RANGEMIN).Append(RANGEMAS)
         Return builder.ToString()
     End Function
-
-
 End Class
 Public Class Pac
     Friend TIPOREC As String = "PAC"
@@ -542,11 +443,9 @@ Public Class Pac
     Friend RESPAGIMBREST As String = "".PadLeft(3)
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
-        builder.Append(TIPOREC).Append(NUMRIGA).Append(CODART).Append(TIPCODART).Append(UDMQUIMB).Append(INFIBACOD).Append(CONIMBCOD).Append(IDETIPIMB).Append(RESPAGIMBREST)
-
+        builder.Append(TIPOREC).Append(NUMRIGA).Append(CODART).Append(TIPCODART).Append(INFIBACOD).Append(CONIMBCOD).Append(IDETIPIMB).Append(RESPAGIMBREST)
         Return builder.ToString()
     End Function
-
 End Class
 Public Class Mei
     Friend TIPOREC As String = "MEI"
@@ -575,11 +474,8 @@ Public Class Dtr
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
         builder.Append(TIPOREC).Append(DATRCONS).Append(ORARCONS).Append(TIPODATRC).Append(DATRCON2).Append(ORARCON2).Append(TIPODATTR2).Append(QTACONS)
-
         Return builder.ToString()
     End Function
-
-
 End Class
 Public Class Ald
     Friend TIPOREC As String = "ALD"
@@ -595,7 +491,6 @@ Public Class Ald
         builder.Append(TIPOREC).Append(INSCADD).Append(DESCR).Append(INDSEQ).Append(TIPOSCADD).Append(IMPORTO).Append(PERC).Append(FLGPRZUN)
         Return builder.ToString()
     End Function
-
 End Class
 Public Class Ftl
     Friend TIPOREC As String = "FTL"
@@ -605,7 +500,6 @@ Public Class Ftl
         builder.Append(TIPOREC).Append(NOTE)
         Return builder.ToString()
     End Function
-
 End Class
 
 Public Class Loc
@@ -625,14 +519,11 @@ Public Class Loc
         builder.Append(TIPOREC).Append(CODCONS).Append(QCODCONS).Append(RAGSOCD).Append(INDIRD).Append(CITTAD).Append(PROVD).Append(CAPD).Append(NAZIOD).Append(QTASPLIt).Append(UDMQORD)
         Return builder.ToString()
     End Function
-
 End Class
 Public Class Dtl
     Friend TIPOREC As String = "DTL"
     Friend DATRCONS As String
     Friend ORARCONS As String
-
-
     Friend TIPODATARC As String
     Friend DATRCON2 As String
     Friend ORARCON2 As String
@@ -643,13 +534,12 @@ Public Class Dtl
         builder.Append(TIPOREC).Append(DATRCONS).Append(ORARCONS).Append(TIPODATARC).Append(DATRCON2).Append(ORARCON2).Append(TIPODATATR2).Append(QTACONS)
         Return builder.ToString()
     End Function
-
 End Class
 Public Class Cnt
     Friend TIPOREC As String = "CNT"
-    Friend QTAORDT As String
-    Friend UDMQORDT As String
-    Friend NUMLIT As String
+    Friend QTAORDT As String = "".PadRight(15)
+    Friend UDMQORDT As String = "".PadLeft(3)
+    Friend NUMLIT As String = "".PadLeft(15)
     Public Overrides Function ToString() As String
         Dim builder = New StringBuilder()
         builder.Append(TIPOREC).Append(QTAORDT).Append(UDMQORDT).Append(NUMLIT)
