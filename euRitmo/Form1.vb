@@ -29,8 +29,9 @@ Public Class Form1
         bgm.DATADOC = tg904.Tes.DTORD
         bgm.TIPODOC = "ORDERS"
         ''bgm.
-        bgm.NUMDOC1 = tg904.Tes.ORD.PadRight(35)
-        bgm.numdoc2 = tg904.Tes.ORD.PadRight(35)
+        ''bgm.NUMDOC1 = tg904.Tes.ORD.PadRight(35)
+        ''bgm.numdoc2 = tg904.Tes.ORD.PadRight(35)
+        bgm.NUMDOC = tg904.Tes.ORD.PadRight(35)
         bgm.ID_EDI_MITT1 = tg904.Tes.EDI_MITT1.PadRight(35)
         bgm.ID_EDI_MITT2 = tg904.Tes.EDI_MITT2.PadRight(4)
         bgm.ID_EDI_DEST1 = tg904.Tes.EDI_DEST1.PadRight(35)
@@ -128,7 +129,7 @@ Public Class Form1
         End If
 
 
-        Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
+        '' Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
 
 
         Dim fileName = "test.txt"
@@ -212,7 +213,18 @@ Public Class Form1
 
             Dim str = tg904.Tostring()
             Dim converter = MapToOrdineEdi(tg904)
-            writeToFile(converter)
+            '' writeToFile(converter)
+            test(tg904, converter)
+
         End If
+    End Sub
+    Private Sub test(tg904 As Tg904, order_edi As ordine_edi)
+        Dim class1 = GetType(Bgm).ToString()
+        Dim class2 = GetType(Tes).ToString()
+        Dim field1 = "NUMDOC"
+        Dim field2 = "TRK"
+
+        Dim newResult = EdiOrderConverter.ReplaceFieldWithValues(tg904, order_edi, class1, field1, class2, field2)
+        MsgBox("RISULTATO FINALE " & newResult.ToString())
     End Sub
 End Class
