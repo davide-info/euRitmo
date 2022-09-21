@@ -218,13 +218,13 @@ Public Class Form1
 
         End If
     End Sub
-    Private Sub test(tg904 As Tg904, order_edi As ordine_edi)
+   shared  Private Sub test(tg904 As Tg904, order_edi As ordine_edi)
         Dim class1 = GetType(Bgm).ToString()
         Dim class2 = GetType(Tes).ToString()
-        Dim field1 = "NUMDOC"
-        Dim field2 = "TRK"
+        Const field1 = "NUMDOC"
+        Const field2 = "OP"
 
         Dim newResult = EdiOrderConverter.ReplaceFieldWithValues(tg904, order_edi, class1, field1, class2, field2)
-        MsgBox("RISULTATO FINALE " & newResult.ToString())
+        MsgBox("RISULTATO FINALE " & newResult.bgm.NUMDOC & " " & tg904.Tes.OP)
     End Sub
 End Class

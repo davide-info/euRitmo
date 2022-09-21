@@ -6,7 +6,7 @@ Imports System.Reflection
 
 Public Class EdiOrderConverter
 
-    Public Shared Function ReplaceFieldWithValues(tg904 As Tg904, order_edi As ordine_edi, ord_trk As String, order_edi_field As String, tg904_trk As String, tg904_field As String)
+    Public Shared Function ReplaceFieldWithValues(tg904 As Tg904, order_edi As ordine_edi, ord_trk As String, order_edi_field As String, tg904_trk As String, tg904_field As String) As ordine_edi
         Dim classType1 As Type = Type.GetType(ord_trk)
         Dim classType2 As Type = Type.GetType(tg904_trk)
         Dim objects As New List(Of Object)
@@ -36,8 +36,10 @@ Public Class EdiOrderConverter
         Dim fieldValue1 = field1.GetValue(castedObject1)
         '' MsgBox(field2.Name)
         Dim fieldValue2 = field2.GetValue(castedObject2)
-
-        field2.SetValue(castedObject1, fieldValue2)
+        MsgBox(fieldValue1)
+        field2.SetValue(castedObject2, fieldValue1)
+        MsgBox(fieldValue2.ToString())
+        '' MsgBox(fieldName1)
         order_edi.GetType().GetField(fieldName1, BindingFlags.NonPublic Or BindingFlags.Instance).SetValue(order_edi, castedObject1)
 
 
