@@ -29,12 +29,13 @@ Public Class Form1
         bgm.DATADOC = tg904.tes.DTORD
         bgm.TIPODOC = "ORDERS"
         ''bgm.
-        bgm.NUMDOC1 = tg904.tes.ORD.PadRight(35)
-        bgm.numdoc2 = tg904.tes.ORD.PadRight(35)
-        bgm.ID_EDI_MITT1 = tg904.tes.EDI_MITT1.PadRight(35)
-        bgm.ID_EDI_MITT2 = tg904.tes.EDI_MITT2.PadRight(4)
-        bgm.ID_EDI_DEST1 = tg904.tes.EDI_DEST1.PadRight(35)
-        bgm.ID_EDI_DEST2 = tg904.tes.EDI_DEST2.Substring(0, 2).PadRight(4)
+        ''bgm.NUMDOC1 = tg904.Tes.ORD.PadRight(35)
+        ''bgm.numdoc2 = tg904.Tes.ORD.PadRight(35)
+        bgm.NUMDOC = tg904.Tes.ORD.PadRight(35)
+        bgm.ID_EDI_MITT1 = tg904.Tes.EDI_MITT1.PadRight(35)
+        bgm.ID_EDI_MITT2 = tg904.Tes.EDI_MITT2.PadRight(4)
+        bgm.ID_EDI_DEST1 = tg904.Tes.EDI_DEST1.PadRight(35)
+        bgm.ID_EDI_DEST2 = tg904.Tes.EDI_DEST2.Substring(0, 2).PadRight(4)
         nas.RAGSOCF = tg904.forn.RAGSOC_For.PadRight(70)
         nas.INDIRF = tg904.forn.IND_FOR.PadRight(70)
         nas.CITTAF = tg904.forn.LOC_FOR.PadRight(35)
@@ -126,6 +127,11 @@ Public Class Form1
         If Not Directory.Exists(dirName) Then
             Directory.CreateDirectory(dirName)
         End If
+
+
+        '' Dim values() As String = {ordine_edi.bgm.TIPOREC & ordine_edi.bgm.NUMDOC}
+
+
         Dim fileName = "test.txt"
         Dim fullPathName = dirName & "\" & fileName
         File.WriteAllText(fullPathName, ordine_edi.ToString())
@@ -135,19 +141,19 @@ Public Class Form1
         For i As Integer = 0 To lines.Count - 1
             If (lines(i).StartsWith("TES")) Then
                 Dim tes As New Tes(lines(i))
-                Tg904.tes = tes
+                Tg904.Tes = tes
             End If
             If (lines(i).StartsWith("TES")) Then
                 Dim tes As New Tes(lines(i))
-                Tg904.tes = tes
+                Tg904.Tes = tes
             End If
             If (lines(i).StartsWith("FOR")) Then
                 Dim forn As New Forn(lines(i))
-                tg904.forn = forn
+                Tg904.forn = forn
             End If
             If (lines(i).StartsWith("RUB")) Then
                 Dim rub As New Rub(lines(i))
-                tg904.rub = rub
+                Tg904.rub = rub
             End If
             If (lines(i).StartsWith("PRO")) Then
                 Dim bloccoDet As New BloccoDet()
@@ -159,31 +165,31 @@ Public Class Form1
                     Dim co As New CO(lines(i + 1 + j), j)
                     bloccoDet.coList.Add(co)
                 Next
-                tg904.DetList.Add(bloccoDet)
+                Tg904.DetList.Add(bloccoDet)
             End If
             If (lines(i).StartsWith("PPI")) Then
 
                 Dim ppi_ppt As New PPI_PPT(lines(i))
-                tg904.ppi = ppi_ppt
+                Tg904.ppi = ppi_ppt
             End If
             If (lines(i).StartsWith("PPT")) Then
                 Dim ppi_ppt As New PPI_PPT(lines(i))
-                tg904.ppt = ppi_ppt
+                Tg904.ppt = ppi_ppt
             End If
             If (lines(i).StartsWith("XNA")) Then
-                tg904.xna = New Xna_Xft(lines(i))
+                Tg904.xna = New Xna_Xft(lines(i))
             End If
             If (lines(i).StartsWith("XFT")) Then
-                tg904.xft = New Xna_Xft(lines(i))
+                Tg904.xft = New Xna_Xft(lines(i))
             End If
             If (lines(i).StartsWith("MIT")) Then
                 Dim mit As New Mit(lines(i))
-                tg904.mit = mit
+                Tg904.mit = mit
             End If
             If (lines(i).StartsWith("END")) Then
             End If
         Next
-        Return tg904
+        Return Tg904
     End Function
     Private Function parseLine(line As String) As String
         Dim result As New StringBuilder()
@@ -203,10 +209,13 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             Dim tg904 = testParseFile(OpenFileDialog1.FileName)
+            ''TextBox1.AppendText(str)
+
             Dim str = tg904.Tostring()
             Dim converter = MapToOrdineEdi(tg904)
             '' writeToFile(converter)
             test(tg904, converter)
+
         End If
 
 
@@ -221,5 +230,14 @@ Public Class Form1
 
 
 
+    End Sub
+    Private Shared Sub test(tg904 As Tg904, order_edi As ordine_edi)
+        Dim class1 = GetType(Bgm).ToString()
+        Dim class2 = GetType(Tes).ToString()
+        Const field1 = "NUMDOC"
+        Const field2 = "OP"
+
+        Dim newResult = EdiOrderConverter.ReplaceFieldWithValues(tg904, order_edi, class1, field1, class2, field2)
+        MsgBox("RISULTATO FINALE " & newResult.bgm.NUMDOC & " " & tg904.Tes.OP)
     End Sub
 End Class

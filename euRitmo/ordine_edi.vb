@@ -25,6 +25,9 @@ Public Class ordine_edi
     Friend loc As Loc
     Friend dtl As Dtl
     Friend cnt As Cnt
+    Public Sub New()
+
+    End Sub
     Public Overrides Function ToString() As String
         Dim builder As New StringBuilder()
         If (Not IsNothing(bgm)) Then
@@ -121,8 +124,8 @@ Public Class Bgm
     Friend ID_EDI_DEST2 As String = "".PadLeft(4)
     Friend ID_EDI_DEST3 As String = "".PadLeft(14)
     Friend TIPODOC As String = "".PadLeft(6)
-    Friend NUMDOC1 As String
-    Friend numdoc2 As String
+    Friend NUMDOC As String
+    ''Friend numdoc2 As String
     Friend DATADOC As String = "".PadLeft(8)
     Friend FORDPROM As String = "".PadLeft(4)
     Friend NUMORDF As String = "".PadLeft(14)
@@ -138,6 +141,7 @@ Public Class Bgm
     Friend TIPOORD As String = "".PadLeft(3)
     Public Sub New()
     End Sub
+
     Public Overrides Function ToString() As String
         Dim builder As New StringBuilder()
         builder.Append(Me.TIPOREC)
@@ -148,13 +152,13 @@ Public Class Bgm
         builder.Append(ID_EDI_DEST2)
         builder.Append(ID_EDI_DEST3)
         builder.Append(TIPODOC)
-        builder.Append(NUMDOC1)
+        builder.Append(NUMDOC)
         builder.Append(DATADOC)
         builder.Append(oradoc)
         builder.Append(Codazion)
         builder.Append(FLAGIMPE)
         builder.Append(TIPOORD)
-        builder.Append(numdoc2)
+        ''builder.Append(numdoc2)
         Return builder.ToString()
     End Function
 End Class
