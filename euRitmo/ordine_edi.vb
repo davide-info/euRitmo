@@ -35,12 +35,12 @@ Public Class ordine_edi
         End If
 
 
-        If Not IsNothing(Rff) Then
-            builder.Append(Rff.ToString() & vbCrLf)
+        If Not IsNothing(rff) Then
+            builder.Append(rff.ToString() & vbCrLf)
 
         End If
-        If Not IsNothing(RFC) Then
-            builder.Append(RFC.ToString() & vbCrLf)
+        If Not IsNothing(rfc) Then
+            builder.Append(rfc.ToString() & vbCrLf)
         End If
 
         If (Not IsNothing(nas)) Then

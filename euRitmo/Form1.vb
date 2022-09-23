@@ -31,11 +31,11 @@ Public Class Form1
         ''bgm.
         ''bgm.NUMDOC1 = tg904.Tes.ORD.PadRight(35)
         ''bgm.numdoc2 = tg904.Tes.ORD.PadRight(35)
-        bgm.NUMDOC = tg904.Tes.ORD.PadRight(35)
-        bgm.ID_EDI_MITT1 = tg904.Tes.EDI_MITT1.PadRight(35)
-        bgm.ID_EDI_MITT2 = tg904.Tes.EDI_MITT2.PadRight(4)
-        bgm.ID_EDI_DEST1 = tg904.Tes.EDI_DEST1.PadRight(35)
-        bgm.ID_EDI_DEST2 = tg904.Tes.EDI_DEST2.Substring(0, 2).PadRight(4)
+        bgm.NUMDOC = tg904.tes.ORD.PadRight(35)
+        bgm.ID_EDI_MITT1 = tg904.tes.EDI_MITT1.PadRight(35)
+        bgm.ID_EDI_MITT2 = tg904.tes.EDI_MITT2.PadRight(4)
+        bgm.ID_EDI_DEST1 = tg904.tes.EDI_DEST1.PadRight(35)
+        bgm.ID_EDI_DEST2 = tg904.tes.EDI_DEST2.Substring(0, 2).PadRight(4)
         nas.RAGSOCF = tg904.forn.RAGSOC_For.PadRight(70)
         nas.INDIRF = tg904.forn.IND_FOR.PadRight(70)
         nas.CITTAF = tg904.forn.LOC_FOR.PadRight(35)
@@ -141,11 +141,11 @@ Public Class Form1
         For i As Integer = 0 To lines.Count - 1
             If (lines(i).StartsWith("TES")) Then
                 Dim tes As New Tes(lines(i))
-                Tg904.Tes = tes
+                Tg904.tes = tes
             End If
             If (lines(i).StartsWith("TES")) Then
                 Dim tes As New Tes(lines(i))
-                Tg904.Tes = tes
+                Tg904.tes = tes
             End If
             If (lines(i).StartsWith("FOR")) Then
                 Dim forn As New Forn(lines(i))
@@ -212,7 +212,7 @@ Public Class Form1
             ''TextBox1.AppendText(str)
 
             Dim str = tg904.Tostring()
-            Dim converter = MapToOrdineEdi(tg904)
+            Dim converter As ordine_edi = MapToOrdineEdi(tg904)
             '' writeToFile(converter)
             test(tg904, converter)
 
@@ -220,17 +220,7 @@ Public Class Form1
 
 
     End Sub
-    Private Sub test(tg904 As Tg904, converter As ordine_edi)
-        Dim classeOrdEdi = GetType(Bgm)
-        Dim classeTg904 = GetType(Tes)
 
-        Dim tipoRecord = "TIPODOC"
-        EdiOrderConverter.ReplaceFieldWithValues(tg904, converter, classeOrdEdi.ToString(), tipoRecord, classeTg904.ToString(), "")
-        ''MessageBox.Show(converter.bgm.ID_EDI_MITT3)
-
-
-
-    End Sub
     Private Shared Sub test(tg904 As Tg904, order_edi As ordine_edi)
         Dim class1 = GetType(Bgm).ToString()
         Dim class2 = GetType(Tes).ToString()
@@ -238,6 +228,6 @@ Public Class Form1
         Const field2 = "OP"
 
         Dim newResult = EdiOrderConverter.ReplaceFieldWithValues(tg904, order_edi, class1, field1, class2, field2)
-        MsgBox("RISULTATO FINALE " & newResult.bgm.NUMDOC & " " & tg904.Tes.OP)
+        ''  MsgBox("RISULTATO FINALE " & newResult.bgm.NUMDOC & " " & tg904.tes.OP)
     End Sub
 End Class
