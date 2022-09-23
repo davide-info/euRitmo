@@ -1,8 +1,9 @@
-﻿Imports System.Text
+﻿
+Imports System.Text
 Public Class ordine_edi
     Friend bgm As Bgm
-    Friend Rff As RFF
-    Friend RFC As RFC
+    Friend rff As RFF
+    Friend rfc As RFC
     Friend nas As NAS
     Friend cta As CTA
     Friend nab As NAB

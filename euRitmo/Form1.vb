@@ -12,7 +12,7 @@ Public Class Form1
     End Function
 
     Private Shared Function MapToOrdineEdi(tg904 As Tg904) As ordine_edi
-        Dim strB = New StringBuilder()
+        '' Dim strB = New StringBuilder()
         Dim bgm As New Bgm()
         Dim nai As New Nai()
         Dim nas As New NAS()
@@ -26,15 +26,15 @@ Public Class Form1
         Dim ftx As New Ftx()
         'Oggetto Nab manca il campo RAGSOCB'
         'Oggetto Lin Manca il campo CODEANCU , COFORTU, DESART, QTAORD, PRZUNI, TIPOPRZ, '
-        bgm.DATADOC = tg904.Tes.DTORD
+        bgm.DATADOC = tg904.tes.DTORD
         bgm.TIPODOC = "ORDERS"
         ''bgm.
-        bgm.NUMDOC1 = tg904.Tes.ORD.PadRight(35)
-        bgm.numdoc2 = tg904.Tes.ORD.PadRight(35)
-        bgm.ID_EDI_MITT1 = tg904.Tes.EDI_MITT1.PadRight(35)
-        bgm.ID_EDI_MITT2 = tg904.Tes.EDI_MITT2.PadRight(4)
-        bgm.ID_EDI_DEST1 = tg904.Tes.EDI_DEST1.PadRight(35)
-        bgm.ID_EDI_DEST2 = tg904.Tes.EDI_DEST2.Substring(0, 2).PadRight(4)
+        bgm.NUMDOC1 = tg904.tes.ORD.PadRight(35)
+        bgm.numdoc2 = tg904.tes.ORD.PadRight(35)
+        bgm.ID_EDI_MITT1 = tg904.tes.EDI_MITT1.PadRight(35)
+        bgm.ID_EDI_MITT2 = tg904.tes.EDI_MITT2.PadRight(4)
+        bgm.ID_EDI_DEST1 = tg904.tes.EDI_DEST1.PadRight(35)
+        bgm.ID_EDI_DEST2 = tg904.tes.EDI_DEST2.Substring(0, 2).PadRight(4)
         nas.RAGSOCF = tg904.forn.RAGSOC_For.PadRight(70)
         nas.INDIRF = tg904.forn.IND_FOR.PadRight(70)
         nas.CITTAF = tg904.forn.LOC_FOR.PadRight(35)
@@ -54,7 +54,7 @@ Public Class Form1
         nai.CITTAI = tg904.mit.LOC_CLI.PadRight(35)
         nai.PROVI = tg904.mit.PROV_CLI.PadRight(9)
         nai.CAPI = tg904.mit.CAP_CLI.PadRight(9)
-        dtm.DATACONS = tg904.Tes.DTPC.PadRight(8)
+        dtm.DATACONS = tg904.tes.DTPC.PadRight(8)
         dtm.TIPODATAc = "002"
         nai.QCODFATT = "VA".PadRight(3)
         nai.INDIRi = tg904.mit.IND_CLI.PadRight(70)
@@ -103,7 +103,7 @@ Public Class Form1
             lin.NRCUINTU = (curPro.QTA_FORN.Replace("+", "").Replace("-", "") & "0").PadLeft(15, "0")
             For j As Integer = 1 To lin.NUMRIGA
             Next
-            ftx.NOTE = tg904.Tes.NOTE_ORD_T.PadRight(210)
+            ftx.NOTE = tg904.tes.NOTE_ORD_T.PadRight(210)
             lin.CODDISTU = curPro.CODPRO.TrimStart("0").PadRight(35)
             lin.CODFORTU = curPro.CODF.PadRight(35)
             result.lin.Add(lin)
@@ -135,11 +135,11 @@ Public Class Form1
         For i As Integer = 0 To lines.Count - 1
             If (lines(i).StartsWith("TES")) Then
                 Dim tes As New Tes(lines(i))
-                tg904.Tes = tes
+                Tg904.tes = tes
             End If
             If (lines(i).StartsWith("TES")) Then
                 Dim tes As New Tes(lines(i))
-                tg904.Tes = tes
+                Tg904.tes = tes
             End If
             If (lines(i).StartsWith("FOR")) Then
                 Dim forn As New Forn(lines(i))
@@ -205,7 +205,21 @@ Public Class Form1
             Dim tg904 = testParseFile(OpenFileDialog1.FileName)
             Dim str = tg904.Tostring()
             Dim converter = MapToOrdineEdi(tg904)
-            writeToFile(converter)
+            '' writeToFile(converter)
+            test(tg904, converter)
         End If
+
+
+    End Sub
+    Private Sub test(tg904 As Tg904, converter As ordine_edi)
+        Dim classeOrdEdi = GetType(Bgm)
+        Dim classeTg904 = GetType(Tes)
+
+        Dim tipoRecord = "TIPODOC"
+        EdiOrderConverter.ReplaceFieldWithValues(tg904, converter, classeOrdEdi.ToString(), tipoRecord, classeTg904.ToString(), "")
+        ''MessageBox.Show(converter.bgm.ID_EDI_MITT3)
+
+
+
     End Sub
 End Class

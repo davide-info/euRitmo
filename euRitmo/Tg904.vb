@@ -10,7 +10,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar
 Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Tg904
-    Friend Tes As Tes
+    Friend tes As Tes
     Friend forn As Forn
     Friend rub As Rub
     Friend pdv As Pdv
@@ -24,9 +24,8 @@ Public Class Tg904
     Friend xft As Xna_Xft
     Public Overrides Function Tostring() As String
         Dim str = ""
-        If Not IsNothing(Tes) Then
-
-            str = Tes.ToString()
+        If Not IsNothing(tes) Then
+            str = tes.ToString()
         End If
         Return str
     End Function
@@ -52,7 +51,6 @@ Public Class Det
     Friend PNT_CAR As String
     Friend STATO_RIG As String
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         SCHEMA = line.Substring(3, 4).Trim()
@@ -317,7 +315,6 @@ Public Class Pdv
         CODSEDEAMM_PDV = line.Substring(521, 6).Trim()
         CODSEDELEG_PDV = line.Substring(527, 6).Trim()
         COD_PDV = line.Substring(533, 6).Trim()
-
     End Sub
     Friend TRK As String
     Friend RAGSOC_PDV As String
@@ -447,7 +444,6 @@ End Class
 
 Public Class Dett
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         TRK = line.Substring(0, 3).Trim()
@@ -673,7 +669,6 @@ Public Class PPI_PPT
     Friend PP_ALIQ As String
     Friend PP_CODIVA As String
     Public Sub New()
-
     End Sub
     Public Sub New(line As String)
         TRK = line.Substring(0, 3).Trim()

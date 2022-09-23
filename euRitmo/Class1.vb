@@ -1,86 +1,26 @@
-''Imports euRitmo
+
 Imports System.Reflection
-Imports ordine_edi
+
 
 
 
 Public Class EdiOrderConverter
-
-    Public Shared Function ReplaceFieldWithValues(tg904 As Tg904, order_edi As ordine_edi, ord_trk As String, order_edi_field As String, tg904_trk As String, tg904_field As String)
-        Dim classType1 As Type = Type.GetType(ord_trk)
-        Dim objects As New List(Of Object)
-
-        Dim newObject = classType1.GetConstructor(Type.EmptyTypes).Invoke(objects.ToArray())
-        Dim castedResult = getCastedObject(ord_trk, newObject)
-        If Not IsNothing(castedResult) Then
-            MessageBox.Show(castedResult.ToString())
-
-        Else
-            MsgBox("Nothing")
+    Public Shared Function ReplaceFieldWithValues(tg904 As Tg904, order_edi As ordine_edi, order_edi_trk As String, order_edi_field As String, tg904_trk As String, tg904_field As String)
+        Dim classType1 As Type = Type.GetType(order_edi_trk)
+        Const bf As BindingFlags = BindingFlags.Instance Or BindingFlags.NonPublic
+        Dim orderEdiFieldName = order_edi_trk.Substring(8).ToLower()
+        Dim tg904FieldName = tg904_trk.Substring(8).ToLower()
+        Dim orderEdiFieldInfo = order_edi.GetType().GetField(orderEdiFieldName, bf)
+        Dim trkOrderField = orderEdiFieldInfo.GetValue(order_edi)
+        Dim fieldTypeTg904 As Type = Type.GetType(tg904_trk)
+        Dim tg904Type = tg904.GetType()
+        Dim tg904FieldInfo = tg904Type.GetField(tg904FieldName, bf)
+        If Not IsNothing(tg904FieldInfo) Then
+            Dim trkTg904Field = tg904FieldInfo.GetValue(tg904)
+            MsgBox(trkTg904Field.ToString())
         End If
-        'Dim tryCastObj = TryCast(newObject, classType1)
-
-
-        For Each field As FieldInfo In classType1.GetFields()
-            If field.Name = order_edi_field Then
-
-
-            End If
-
-        Next
-        'Dim subPro = Sub(fi As FieldInfo)
-        '                 If fi.Name = order_edi_field Then
-        '                     fi.SetValue(order_edi, value)
-        '                 End If
-        '             End Sub
-
-        '' Dim fields = Type.GetType(trk_order).GetFields().ToList()
-        ''fields.ForEach(subPro)
-
+        MsgBox(trkOrderField.ToString())
         Return order_edi
 
     End Function
-    'Mi costruisco l'oggetto castato'
-
-    Private Shared Function getCastedObject(type As String, myObject As Object)
-        Dim newType = type.Substring(8) 'Tolgo euritmo.'
-        MsgBox(newType)
-        If (newType.Equals("bgm", StringComparison.InvariantCultureIgnoreCase)) Then
-            Return TryCast(myObject, Bgm)
-        End If
-        If (newType.Equals("rff", StringComparison.InvariantCultureIgnoreCase)) Then
-            Return TryCast(myObject, RFF)
-        End If
-        If (newType.Equals("rfc", StringComparison.InvariantCultureIgnoreCase)) Then
-            Return TryCast(myObject, RFC)
-        End If
-        If (newType.Equals("NAS", StringComparison.InvariantCultureIgnoreCase)) Then
-            Return TryCast(myObject, NAS)
-
-        End If
-        If newType.Equals("CTA", StringComparison.InvariantCultureIgnoreCase) Then
-            Return TryCast(myObject, CTA)
-
-        End If
-        If newType.Equals("NAB", StringComparison.InvariantCultureIgnoreCase) Then
-            Return TryCast(myObject, NAB)
-
-        End If
-        If newType.Equals("NAD", StringComparison.InvariantCultureIgnoreCase) Then
-            Return TryCast(myObject, NAB)
-
-        End If
-        If newType.Equals("NAI", StringComparison.InvariantCultureIgnoreCase) Then
-            Return TryCast(myObject, Nai)
-
-        End If
-        If newType.Equals("NAB", StringComparison.InvariantCultureIgnoreCase) Then
-            Return TryCast(myObject, NAB)
-        End If
-
-
-        Return Nothing
-    End Function
-
-
 End Class
